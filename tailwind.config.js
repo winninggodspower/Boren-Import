@@ -15,6 +15,7 @@ module.exports = {
         'primary-dark': 'rgba(3, 19, 192, 1)',
         'custom-gray': '#5C5B5B',
         'custom-gray-2': '#303031',
+        'custome-white': 'rgba(217, 217, 217, 0)',
       }
     },
     plugins: [
