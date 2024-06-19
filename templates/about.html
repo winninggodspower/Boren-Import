@@ -1,0 +1,120 @@
+{% extends "_base.html" %}
+{% load static %}
+
+{% block head %}
+  <title>About | Boren Import</title>
+{% endblock head %}
+
+{% block body %}
+
+  <section class="bg-center bg-no-repeat bg-cover h-[351px] flex justify-center items-center"
+    style="background-image: linear-gradient(rgba(3, 19, 192, 0.56),rgba(3, 19, 192, 0.56)),url({% static 'assets/about-us-header.jpg' %})">
+    <div class="container max-w-screen-xl px-2 mx-auto text-white ">
+      <h1 class="text-center text-3xl md:text-[45px] leading-[45px] font-extrabold">ABOUT US </h1>
+      <p class="mt-3 text-lg font-light text-center md:text-xl md:font-normal md:mt-6">HOME > ABOUT US</p>
+    </div>
+  </section>
+
+  <section class="container mx-auto pt-24 pb-32 md:pt-[131px] md:pb-[212px] ">
+    <div
+      class="grid justify-center items-center gap-12 md:gap-24 md:grid-cols-[43%,50%] mx-4 md:me-10  md:justify-normal">
+      <div class="justify-self-center md:justify-self-end text-center text-[rgba(0,0,0,0.57)]">
+        <img class="w-[440px] max-w-[95%] mx-auto" src="{% static 'assets/CEO-crop.png' %}" alt="">
+        <h4 class="mt-3 text-3xl font-bold">Mrs Angella Umoren</h4>
+        <p class="font-bold text-lg leading-[22px]"> CEO / MD</p>
+      </div>
+      <div class="self-start">
+        <h2 class="text-3xl md:text-[40px] text-primary-dark font-extrabold text-center md:text-start ">KNOW ABOUT US
+        </h2>
+        <hr class="mx-auto md:mx-0 w-2/12 h-[4px] bg-[#4C4343] mt-4">
+
+        <p class="mt-5 text-center md:text-justify ">
+          Boren Imports Int'l Ltd offers comprehensive procurement and freight forwarding services, including customs brokerage, consolidation, warehousing, and payment handling for clients.
+          <br> <br>
+          We specialize in procurement and shipping from China to Nigeria, Ghana, and the USA. With six (6) years of experience and a dedicated team, we aim to make the procurement and shipping process easy and convenient for our clients. If there's anything specific you'd like to discuss or inquire about, feel free to contact us!
+          <br>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="flex px-2 py-20 min-h-[460px] bg-center bg-no-repeat bg-cover"
+    style="background-image: linear-gradient(rgba(3, 19, 192, 0.56),rgba(3, 19, 192, 0.56)),url({% static 'assets/stat-header.jpg' %})">
+    <div
+      class="container flex flex-col items-center justify-center max-w-screen-xl gap-20 mx-auto text-white md:flex-row md:gap-28 lg:gap-36">
+      <div class="flex flex-col items-center font-be-vietnam">
+        <img src="{% static 'assets/icons/formkit_people.svg' %}" width="124" alt="">
+        <h3 class="mb-4 text-4xl font-extrabold md:text-5xl">10,353+</h3>
+        <p class="text-xl font-medium">HAPPY CUSTOMERS</p>
+      </div>
+      <div class="flex flex-col items-center font-be-vietnam">
+        <img src="{% static 'assets/icons/formkit_people.svg' %}" width="124" alt="">
+        <h3 class="mb-4 text-4xl font-extrabold md:text-5xl">10,353+</h3>
+        <p class="text-xl font-medium">HAPPY CUSTOMERS</p>
+      </div>
+      <div class="flex flex-col items-center font-be-vietnam">
+        <img src="{% static 'assets/icons/formkit_people.svg' %}" width="124" alt="">
+        <h3 class="mb-4 text-4xl font-extrabold md:text-5xl">10,353+</h3>
+        <p class="text-xl font-medium">HAPPY CUSTOMERS</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container mx-auto">
+    <div class="grid md:grid-cols-[47%,53%] pt-[300px] pb-[150px]">
+      <div class="grid grid-cols-[auto_auto] gap-x-[14px] gap-y-16 mb-10 py-3 px-8">
+        <img class="max-w-full justify-self-end w-16 md-[108px]" width="" src="{% static 'assets/eye.png' %}" alt="">
+        <div>
+          <h4 class="mb-3 text-xl font-extrabold md:text-3xl text-primary">OUR VISION</h4>
+          <p class="mt-[30px] text-[rgba(92,91,91,1)] leading-6">To be positioned as the world’s preferred procurement
+            and fright forwarding company by being
+            customer’s obvious choice by providing total legitimates solution through innovative and reliable service
+          </p>
+        </div>
+
+        <img class="max-w-full justify-self-end w-12 md-[89px]" width="" src="{% static 'assets/bullseye.png' %}" alt="">
+        <div>
+          <h4 class="mb-3 text-xl font-extrabold md:text-3xl text-primary">OUR MISSION</h4>
+          <p class="mt-[30px] text-[rgba(92,91,91,1)] leading-6">To become the world’s preferred Procurement and
+            Logistics company, provide superior customer
+            service by providing the highest level cost effective solutions to buying and shipping problems, produce
+            world class employers that represent our company while creating a healthy professional environment to
+            nurture business relationships that will promise mutual growth
+          </p>
+        </div>
+      </div>
+      <img class="justify-self-center max-w-[90%] w-[500px]" src="{% static 'assets/vison-mission-section.png' %}" alt="">
+  </section>
+
+  <section class="container mx-auto pb-32 md:pb-[207px]">
+    <h2 class="text-3xl md:text-[40px] text-center text-primary-dark font-extrabold font-be-vietnam">OUR TEAM</h2>
+    <hr class="mx-auto w-2/12 md:w-1/12 border-[2px] border-custom-gray bg-white mt-4 mb-2">
+
+    <div class="grid grid-cols-1 mt-24 md:grid-cols-3 md:gap-y-28 gap-y-20">
+      <div class="">
+        <img class="w-[296px] max-w-[90%] mx-auto" src="{% static 'assets/about-us-officer.jpg' %}" alt="">
+        <div class="font-bold mt-5 text-2xl text-center text-[rgba(0,0,0,0.57)]">
+          <h5>Abigial Johnson</h5>
+          <p class="text-base">Shift Manager</p>
+        </div>
+      </div>
+
+      <div class="">
+        <img class="w-[296px] max-w-[90%] mx-auto" src="{% static 'assets/about-us-officer.jpg' %}" alt="">
+        <div class="font-bold mt-5 text-2xl text-center text-[rgba(0,0,0,0.57)]">
+          <h5>Abigial Johnson</h5>
+          <p class="text-base">Shift Manager</p>
+        </div>
+      </div>
+
+      <div class="">
+        <img class="w-[296px] max-w-[90%] mx-auto" src="{% static 'assets/about-us-officer.jpg' %}" alt="">
+        <div class="font-bold mt-5 text-2xl text-center text-[rgba(0,0,0,0.57)]">
+          <h5>Abigial Johnson</h5>
+          <p class="text-base">Shift Manager</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock body %}

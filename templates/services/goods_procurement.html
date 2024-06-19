@@ -1,0 +1,33 @@
+{% extends "_base.html" %}
+
+{% block head %}
+    <title> Goods Procurement Service | Boren Import</title>
+{% endblock head %}
+
+{% block body %}
+    <section
+    class="bg-center bg-no-repeat bg-cover h-[351px] flex justify-center items-center bg-[url('../assets/services-header.jpg')]">
+    <div class="container max-w-screen-xl px-2 mx-auto text-white ">
+        <h2 class="text-center text-3xl md:text-[45px] leading-[45px] font-extrabold">OUR SERVICES</h2>
+        <p class="mt-3 text-lg text-center md:text-xl md:font-normal md:mt-6">HOME > SERVICES > PROCUREMENT OF GOODS</p>
+    </div>
+    </section>
+
+    <section class="container mx-auto pt-10 md:pt-[68px] pb-52 md:pb-64 px-4">
+    <h1 class="font-bold md:font-extrabold font-be-vietnam text-center text-2xl md:text-4xl mb-20 md:mb-[110px]">
+        PROCUREMENT OF GOODS</h1>
+
+    <div class="grid justify-center grid-cols-1 md:grid-cols-2 gap-x-9">
+        <div>
+            <p class="font-light font-be-vietnam text-lg md:text-xl text-justify" style="line-height: 41px;">
+                This service help us ensure our customer's experience with procurement of goods from China seems thorough and valuable.
+                We ensure accuracy and transparency throughout the procurement process by confirming details such as quantity, size, weight, and other specifications are met by the manufacturer or supplier.
+                We also ensure secure payment transactions to manufacturers or suppliers in China which adds an extra layer of security for our clients.</p>
+                <a
+                class="inline-block text-white px-5 py-2 mt-5 text-[15px] font-bold md:text-sm bg-primary md:mt-10 btn-focus rounded-[5px]">REQUEST
+                A QUOTE</a>
+        </div>
+        <img class="max-w-[570px] w-[90%] mx-auto mb-2 md:mb-0" src="/static/assets/services/goods_procurement.png" alt="">
+    </div>
+    </section>
+{% endblock body %}

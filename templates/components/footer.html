@@ -1,0 +1,147 @@
+{% load static %}
+<footer class="bg-[url(../assets/footer-bg.jpg)] bg-no-repeat bg-cover bg-center text-white pt-[75px]">
+    <div class="container max-w-screen-xl mx-auto pb-20 md:pb-[107px]">
+        <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+            <div>
+                <a href="#" class="flex items-center gap-3">
+                    <img class="h-16 md:h-24" src="/static/assets/BOREN-IMPORTS-LOGO-BG.png" alt="Boren Import Logo" />
+                    <span class="self-center text-xl font-bold font-inter md:text-2xl whitespace-wrap">BOREN
+                        <br>IMPORTS</span>
+                </a>
+                <p class="font-[550] mt-[18px] text-[15px] leading-[26px]">
+                    Boren Imports is a procurement & Freight forwarding company (RC 3186389) providing Air & Sea
+                    Freight
+                    Shipping from China to Nigeria and other West African countries, from China to USA and From USA
+                    to Nigeria.
+                    We offer Cargo Consolidation and Customs Clearing service.
+                </p>
+            </div>
+            <div>
+                <h2 class="pt-5 text-xl font-extrabold md:text-2xl font-be-vietnam">CONTACT US</h2>
+                <hr class="w-3/12 md:w-3/12 border-[2px] border-custom-white mt-3 mb-2">
+                <ul class="mt-12 text-base font-medium leading-[26px]">
+                    <li class="mb-8">
+                        <p>No. 35 Ekpanya Street, Off Ikpa Road,
+                            Uyo, Akwa Ibom State, Nigeria.</p>
+                    </li>
+                    <li class="">
+                        <a href="mail:borenimport@gmail.com" class="hover:underline break-words">borenimport@gmail.com</a>
+                    </li>
+                    <li class="">
+                        <a href="tel:+2347084645549" class="hover:underline">07084645549</a>
+                    </li>
+                    <li class="">
+                        <a href="tel:+2347015755785" class="hover:underline">07015755785</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="pt-5 text-xl font-extrabold md:text-2xl font-be-vietnam">OUR SERVICES</h2>
+                <hr class="w-3/12 md:w-3/12 border-[2px] border-custom-white mt-3 mb-2">
+                <ul class="mt-12 font-medium list-['>__'] list-inside">
+                    <li class="mb-1">
+                        <a href="{% url "product_sourcing" %}" class="hover:underline">International Product Sourcing </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="{% url "goods_procurement" %}" class="hover:underline">Procurement of goods </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="{% url "fx_payment" %}" class="hover:underline">FX payments</a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="{% url "product_consultation" %}" class="hover:underline">Product consolidation and warehousing</a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="{% url "air_shipping" %}" class="hover:underline">Air shipping</a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="{% url "sea_shipping" %}" class="hover:underline">Sea shipping </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="{% url "air_shipping" %}" class="hover:underline">Drop shipping</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2 class="pt-5 text-xl font-extrabold md:text-2xl font-be-vietnam">QUICK LINKS</h2>
+                <hr class="w-3/12 md:w-3/12 border-[2px] border-custom-white mt-3 mb-2">
+                <ul class="mt-12 font-medium list-['>__'] list-inside">
+                    <li class="mb-1">
+                        <a href="/" class="hover:underline">Home</a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="#" class="hover:underline">Services</a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="/about" class="hover:underline">About us</a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="#" class="hover:underline">Contact us</a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="{% url "login" %}" class="hover:underline">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="px-4 py-3 md:flex md:items-center md:justify-between">
+            <div class="flex mt-4 mb-8 space-x-5 sm:justify-center md:mt-0 rtl:space-x-reverse">
+                <a href="#">
+                    <svg width="27" height="25" viewBox="0 0 27 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M7.83 0H19.17C23.49 0 27 3.25 27 7.25V17.75C27 19.6728 26.1751 21.5169 24.7066 22.8765C23.2382 24.2362 21.2466 25 19.17 25H7.83C3.51 25 0 21.75 0 17.75V7.25C0 5.32718 0.824944 3.48311 2.29335 2.12348C3.76176 0.763837 5.75336 0 7.83 0ZM7.56 2.5C6.27105 2.5 5.03489 2.97411 4.12346 3.81802C3.21203 4.66193 2.7 5.80653 2.7 7V18C2.7 20.4875 4.8735 22.5 7.56 22.5H19.44C20.729 22.5 21.9651 22.0259 22.8765 21.182C23.788 20.3381 24.3 19.1935 24.3 18V7C24.3 4.5125 22.1265 2.5 19.44 2.5H7.56ZM20.5875 4.375C21.0351 4.375 21.4643 4.53962 21.7807 4.83265C22.0972 5.12567 22.275 5.5231 22.275 5.9375C22.275 6.3519 22.0972 6.74933 21.7807 7.04235C21.4643 7.33538 21.0351 7.5 20.5875 7.5C20.1399 7.5 19.7107 7.33538 19.3943 7.04235C19.0778 6.74933 18.9 6.3519 18.9 5.9375C18.9 5.5231 19.0778 5.12567 19.3943 4.83265C19.7107 4.53962 20.1399 4.375 20.5875 4.375ZM13.5 6.25C15.2902 6.25 17.0071 6.90848 18.273 8.08058C19.5388 9.25268 20.25 10.8424 20.25 12.5C20.25 14.1576 19.5388 15.7473 18.273 16.9194C17.0071 18.0915 15.2902 18.75 13.5 18.75C11.7098 18.75 9.9929 18.0915 8.72703 16.9194C7.46116 15.7473 6.75 14.1576 6.75 12.5C6.75 10.8424 7.46116 9.25268 8.72703 8.08058C9.9929 6.90848 11.7098 6.25 13.5 6.25ZM13.5 8.75C12.4259 8.75 11.3957 9.14509 10.6362 9.84835C9.87669 10.5516 9.45 11.5054 9.45 12.5C9.45 13.4946 9.87669 14.4484 10.6362 15.1517C11.3957 15.8549 12.4259 16.25 13.5 16.25C14.5741 16.25 15.6043 15.8549 16.3638 15.1517C17.1233 14.4484 17.55 13.4946 17.55 12.5C17.55 11.5054 17.1233 10.5516 16.3638 9.84835C15.6043 9.14509 14.5741 8.75 13.5 8.75Z"
+                            fill="white" />
+                    </svg>
+                    <span class="sr-only">Instagram page</span>
+                </a>
+                <a href="#">
+                    <svg width="27" height="25" viewBox="0 0 27 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M27 12.5313C27 5.61404 20.952 0 13.5 0C6.048 0 0 5.61404 0 12.5313C0 18.5965 4.644 23.6466 10.8 24.812V16.2907H8.1V12.5313H10.8V9.3985C10.8 6.97995 12.9195 5.01253 15.525 5.01253H18.9V8.77193H16.2C15.4575 8.77193 14.85 9.33584 14.85 10.0251V12.5313H18.9V16.2907H14.85V25C21.6675 24.3734 27 19.0351 27 12.5313Z"
+                            fill="white" />
+                    </svg>
+                    <span class="sr-only">Facebook page</span>
+                </a>
+                <a href="#">
+                    <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22.2222 0C22.9589 0 23.6655 0.269245 24.1864 0.748505C24.7073 1.22776 25 1.87778 25 2.55556V20.4444C25 21.1222 24.7073 21.7722 24.1864 22.2515C23.6655 22.7308 22.9589 23 22.2222 23H2.77778C2.04107 23 1.33453 22.7308 0.813592 22.2515C0.292658 21.7722 0 21.1222 0 20.4444V2.55556C0 1.87778 0.292658 1.22776 0.813592 0.748505C1.33453 0.269245 2.04107 0 2.77778 0H22.2222ZM21.5278 19.8056V13.0333C21.5278 11.9286 21.0507 10.869 20.2016 10.0878C19.3525 9.30665 18.2008 8.86778 17 8.86778C15.8194 8.86778 14.4444 9.53222 13.7778 10.5289V9.11056H9.90278V19.8056H13.7778V13.5061C13.7778 12.5222 14.6389 11.7172 15.7083 11.7172C16.224 11.7172 16.7186 11.9057 17.0833 12.2412C17.4479 12.5767 17.6528 13.0317 17.6528 13.5061V19.8056H21.5278ZM5.38889 7.10444C6.00773 7.10444 6.60122 6.87828 7.03881 6.4757C7.47639 6.07312 7.72222 5.52711 7.72222 4.95778C7.72222 3.76944 6.68056 2.79833 5.38889 2.79833C4.76637 2.79833 4.16934 3.02585 3.72915 3.43082C3.28896 3.83579 3.04167 4.38506 3.04167 4.95778C3.04167 6.14611 4.09722 7.10444 5.38889 7.10444ZM7.31944 19.8056V9.11056H3.47222V19.8056H7.31944Z"
+                            fill="white" />
+                    </svg>
+                    <span class="sr-only">LinkedIn page</span>
+                </a>
+                <a href="#">
+                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.28571 0C1.47344 0 0 1.47344 0 3.28571V19.7143C0 21.5266 1.47344 23 3.28571 23H19.7143C21.5266 23 23 21.5266 23 19.7143V3.28571C23 1.47344 21.5266 0 19.7143 0H3.28571ZM18.5386 4.3125L13.2096 10.4013L19.4781 18.6875H14.5701L10.7299 13.6614L6.33013 18.6875H3.89152L9.59018 12.1725L3.57835 4.3125H8.6096L12.0853 8.90737L16.1 4.3125H18.5386ZM16.598 17.2295L7.87545 5.69353H6.42254L15.2426 17.2295H16.5929H16.598Z"
+                            fill="white" />
+                    </svg>
+                    <span class="sr-only">Twitter page</span>
+                </a>
+
+            </div>
+            <div>
+                <h3 class="pb-2 text-xl font-extrabold md:pb-5 md:text-2xl font-be-vietnam">SUBSCRIBE</h3>
+                <form id="newsletter-form" class="max-w-md mx-auto">
+                    {% csrf_token %}                    
+                    <label for="default-search"
+                        class="mb-2 text-sm font-medium text-gray-900 sr-only">Subscribe</label>
+                    <div
+                        class="flex h-10 w-[429px] max-w-full border border-custom-white focus:ring-blue-500 focus:border-blue-500">
+                        <input name="email" type="email" id="default-search"
+                            class="block w-full p-4 text-sm bg-transparent border text-dark focus:outline-none"
+                            placeholder="Enter your email address" required/>
+                        <button type="submit"
+                            class="h-full px-4 text-sm font-medium text-white bg-primary-dark hover:bg-primary focus:ring-4 focus:outline-none ">SUBSCRIBE</button>
+                    </div>
+                    <div id="error-message" class="text-red-700"></div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div class="py-8 font-medium text-center bg-[rgba(3,19,192,0.31)]">
+        copyright @2024 Borem Imports. All Rights Reserved.
+    </div>
+</footer>
+<script src="{% static 'js/newsletter.js' %}"></script>
