@@ -7,7 +7,7 @@
 {% block body %}
 
 <main class="pt-20 pb-32 bg-[url('/static/assets/register-login-bg.jpg')] ">
-    <div class="w-11/12 max-w-[728px] pt-20 md:pt-24 px-6 md:px-[91px] rounded-3xl mx-auto bg-white ">
+    <div class="w-11/12 max-w-[728px] pt-20 pb-28 md:pt-24 md:pb-32 px-6 md:px-[91px] rounded-3xl mx-auto bg-white ">
         <form action="{% url 'login' %}" method="post">
             {% csrf_token %}
             <legend class="font-semibold text-4xl md:text-[40px] text-custom-gray-3 mb-10 md:mb-16">Welcome Back!</legend>
@@ -32,7 +32,8 @@
                 {{ field.errors }}
             </div>
             {% endfor %} -->
-            <p class="fw-bold text-center">Forgot password? <a href="{% url 'password_reset' %}" class="text-decoration-none"> reset password</a></p>
+            <p class="fw-bold text-center">Forgot password? <a class="text-custom-red" href="{% url 'password_reset' %}" class="text-decoration-none"> reset password</a></p>
+            <p class="fw-bold text-center mt-2 md:mt-[15px]">Don't have an account? <a class="text-primary" href="{% url 'register' %}" class="text-decoration-none"> Sign Up</a></p>
             <!-- <input class="btn btn-primary" type="submit" value="Submit"> -->
         </form>
     </div>
