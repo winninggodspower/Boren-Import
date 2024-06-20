@@ -19,4 +19,7 @@ urlpatterns = [
     path('cms/', include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
     path('pages/', include(wagtail_urls)),
+
+    #broswer reload url
+    path("__reload__/", include("django_browser_reload.urls")),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
