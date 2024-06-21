@@ -7,6 +7,7 @@ charset-normalizer==3.3.2
 csscompressor==0.9.5
 defusedxml==0.7.1
 Django==4.0
+django-browser-reload==1.13.0
 django-compress-staticfiles==1.0.1b0
 django-filter==23.5
 django-modelcluster==6.2.1
@@ -20,6 +21,7 @@ filetype==1.2.0
 html5lib==1.1
 idna==3.6
 l18n==2021.3
+laces==0.1.1
 openpyxl==3.1.2
 pillow==10.2.0
 pillow-heif==0.14.0
