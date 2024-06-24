@@ -1,6 +1,7 @@
 from django.db import models
 
 from modelcluster.fields import ParentalKey
+from modelcluster.models import ClusterableModel
 
 from wagtail.models import Page, Orderable
 from wagtail.fields import RichTextField
@@ -23,12 +24,25 @@ class BlogIndexPage(Page):
     ]
 
 
+class Category(ClusterableModel):
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True)
+
+    panels = [
+        FieldPanel('name'),
+        FieldPanel('slug'),
+    ]
+
+    def __str__(self):
+        return self.name
+
 class BlogPage(Page):
 
     # Database fields
     intro = models.TextField(help_text="Text to describe the page")
     body = RichTextField()
     date_created = models.DateField("Post date")
+    category = ParentalKey(Category, on_delete=models.SET_NULL, blank=True, null=True)
     image = models.ForeignKey(
         'wagtailimages.Image',
         null=True,
