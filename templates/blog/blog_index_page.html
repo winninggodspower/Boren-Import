@@ -1,7 +1,132 @@
 {% extends 'blog/base.html' %}
+{% load static %}
 
 {% block content %}
-    <h1>{{page.title}}</h1>
+<section
+    class="bg-center bg-no-repeat bg-cover h-[351px] flex justify-center items-center bg-[url('../assets/services-header.jpg')]">
+    <div class="container max-w-screen-xl px-2 mx-auto text-white ">
+        <h2 class="text-center text-3xl md:text-[45px] text-custom-dark leading-[45px] font-extrabold capitalize">{{page.title}}</h2>
+        <p class="mt-3 text-lg text-center md:text-xl md:font-normal md:mt-6">HOME > BLOG</p>
+    </div>
+</section>
 
-    {{ page.body }}
+<section class="container mx-auto pt-10 md:pt-[68px] pb-52 md:pb-64 px-4">
+    <h1
+        class="font-bold md:font-extrabold font-be-vietnam text-center text-2xl md:text-4xl mb-20 md:mb-[30px] text-custom-dark">
+        BLOG</h1>
+
+    <div class="md:grid grid-cols-[65%,35%] ">
+        <main class="flex flex-col gap-y-20 h-[160px] md:h-fit">
+            <div class="flex gap-x-5 md:block h-[160px] md:h-auto w-[95%] max-w-[658px] mx-auto font-be-vietnam">
+                <img class="md:w-full h-full md:h-[600px] rounded-[10px]" src="{% static 'assets/carousel/Rectangle 18.jpg' %}" alt="">
+                <div>
+                    <h4 class="mt-0 md:mt-3 text-base md:text-3xl font-medium leading-none">
+                        Boren Imports Redefines Global Logistics.
+                    </h4>
+                    <p class="text-[11px] md:text-sm mt-2 md:mt-1">
+                        Discover how Boren Imports is transforming the landscape of global logistics with innovative
+                        solutions, comprehensive services, and a customer-centric approach.
+                    </p>
+                    <div class="flex justify-between items-end mt-2 mb-3 md:mt-4 md:mb-5">
+                        <a class="block text-[10px] text-primary-dark">read more..</a>
+                        <p class="text-[9px] md:hidden">September 20, 2024</p>
+                    </div>
+    
+                    <div class="flex justify-between items-center">
+                        <p class="text-xs hidden md:block">September 20, 2024</p>
+                        <div class="flex gap-x-3">
+                            <span class="flex gap-x-[7px] items-center text-[8px] md:text-xs">
+                                <img class="w-4 md:w-[24px]" src="{% static 'assets/icons/avatar.svg' %}" alt="">
+                                By Admin
+                            </span>
+                            <span class="flex gap-x-[7px] items-center text-[8px] md:text-xs">
+                                <img class="w-4 md:w-[24px]" src="{% static 'assets/icons/folder.svg' %}" alt="">
+                                Category
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex gap-x-5 md:block h-[160px] md:h-auto w-[95%] max-w-[658px] mx-auto font-be-vietnam">
+                <img class="md:w-full h-full md:h-[600px] rounded-[10px]" src="{% static 'assets/carousel/Rectangle 17.jpg' %}" alt="">
+                <div>
+                    <h4 class="mt-0 md:mt-3 text-base md:text-3xl font-medium leading-none">
+                        Boren Imports Redefines Global Logistics.
+                    </h4>
+                    <p class="text-[11px] md:text-sm mt-2 md:mt-1">
+                        Discover how Boren Imports is transforming the landscape of global logistics with innovative
+                        solutions, comprehensive services, and a customer-centric approach.
+                    </p>
+                    <div class="flex justify-between items-end mt-2 mb-3 md:mt-4 md:mb-5">
+                        <a class="block text-[10px] text-primary-dark">read more..</a>
+                        <p class="text-[9px] md:hidden">September 20, 2024</p>
+                    </div>
+    
+                    <div class="flex justify-between items-center">
+                        <p class="text-xs hidden md:block">September 20, 2024</p>
+                        <div class="flex gap-x-3">
+                            <span class="flex gap-x-[7px] items-center text-[8px] md:text-xs">
+                                <img class="w-4 md:w-[24px]" src="{% static 'assets/icons/avatar.svg' %}" alt="">
+                                By Admin
+                            </span>
+                            <span class="flex gap-x-[7px] items-center text-[8px] md:text-xs">
+                                <img class="w-4 md:w-[24px]" src="{% static 'assets/icons/folder.svg' %}" alt="">
+                                Category
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <section class="w-full font-be-vietnam">
+            <div class="border border-black border-opacity-80 rounded-[10px] pt-[26px] pb-14 px-[22px]">
+                <h4 class="text-custom-dark text-3xl font-extrabold">Search</h4>
+                <div class="flex items-center bg-[#EDE9E9] rounded-[10px] h-[53px] mt-11 pe-2">
+                    <input class="grow bg-transparent h-full ps-8" placeholder="Search" type="text">
+                    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_612_558)">
+                        <path d="M12 14.82C13.66 14.82 15 13.48 15 11.82V5.82C15 4.16 13.66 2.82 12 2.82C10.34 2.82 9 4.16 9 5.82V11.82C9 13.48 10.34 14.82 12 14.82Z" fill="black"/>
+                        <path d="M17 11.82C17 14.58 14.76 16.82 12 16.82C9.24 16.82 7 14.58 7 11.82H5C5 15.35 7.61 18.25 11 18.74V21.82H13V18.74C16.39 18.25 19 15.35 19 11.82H17Z" fill="black"/>
+                        </g>
+                        <defs>
+                        <clipPath id="clip0_612_558">
+                        <rect width="24" height="24" fill="white" transform="translate(0 0.82)"/>
+                        </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="border border-black border-opacity-80 rounded-[10px] pt-[26px] pb-14 px-[22px] mt-10">
+                <h4 class="text-custom-dark text-3xl font-extrabold">Service lists</h4>
+                
+                <div class="mt-11 pe-2 grid gap-y-5">
+                    <a class="flex items-center justify-between bg-[#EDE9E9] rounded-[10px] px-8 py-3 text-custom-dark text-[15px] hover:cursor-pointer hover:text-primary">
+                        International Product/Material Sourcing   <span>>></span>
+                    </a>
+                    <a class="flex items-center justify-between bg-[#EDE9E9] rounded-[10px] px-8 py-3 text-custom-dark text-[15px] hover:cursor-pointer hover:text-primary">
+                        Procurement of goods  <span>>></span>
+                    </a>
+                    <a class="flex items-center justify-between bg-[#EDE9E9] rounded-[10px] px-8 py-3 text-custom-dark text-[15px] hover:cursor-pointer hover:text-primary">
+                        FX Payments   <span>>></span>
+                    </a>
+                    <a class="flex items-center justify-between bg-[#EDE9E9] rounded-[10px] px-8 py-3 text-custom-dark text-[15px] hover:cursor-pointer hover:text-primary">
+                        Product Consolidation and Warehousing   <span>>></span>
+                    </a>
+                    <a class="flex items-center justify-between bg-[#EDE9E9] rounded-[10px] px-8 py-3 text-custom-dark text-[15px] hover:cursor-pointer hover:text-primary">
+                        Air Shipping   <span>>></span>
+                    </a>
+                    <a class="flex items-center justify-between bg-[#EDE9E9] rounded-[10px] px-8 py-3 text-custom-dark text-[15px] hover:cursor-pointer hover:text-primary">
+                        Sea Shipping   <span>>></span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+    </div>
+</section>
+
+{{ page. }}
 {% endblock content %}
