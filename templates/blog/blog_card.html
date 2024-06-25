@@ -4,7 +4,7 @@
     {% if post.image %}
         {% image post.image class="md:w-full h-full md:h-[600px] rounded-[10px] object-cover" fill-160x100 %}
     {% endif %}
-    <a href="{% pageurl post %}" class="block">
+    <div href="{% pageurl post %}" class="block">
         <h4 class="mt-0 md:mt-3 text-base md:text-3xl font-medium leading-none hover:text-primary">
             {{ post.title }}
         </h4>
@@ -29,5 +29,5 @@
                 </span>
             </div>
         </div>
-    </a>
+    </div>
 </div>

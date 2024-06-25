@@ -15,7 +15,7 @@
         class="font-bold md:font-extrabold font-be-vietnam text-center text-2xl md:text-4xl mb-20 md:mb-[30px]">
         BLOG</h1>
 
-    <div class="md:grid grid-cols-[65%,35%] ">
+    <div class="md:grid grid-cols-[auto,35%] ">
         <main class="flex flex-col gap-y-20 h-[160px] md:h-fit">
             {% for post in blogpages %}
             {% with post.specific as post %}
@@ -24,7 +24,7 @@
             {% endfor %}
         </main>
 
-        <section class="w-full font-be-vietnam">
+        <section class="hidden md:block w-full font-be-vietnam">
             <div class="border border-black border-opacity-80 rounded-[10px] pt-[26px] pb-14 px-[22px]">
                 <h4 class="text-custom-dark text-3xl font-extrabold">Search</h4>
                 <div class="flex items-center bg-[#EDE9E9] rounded-[10px] h-[53px] mt-11 pe-2">
