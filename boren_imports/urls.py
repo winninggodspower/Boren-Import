@@ -14,6 +14,7 @@ urlpatterns = [
     path("services/", include('services.urls')),
     path("auth/", include('user_authentication.urls')),
     path("newsletter/", include('newsletter.urls')),
+    path("service_enquiry/", include('service_enquiry.urls')),
 
     #wagtail urls
     path('cms/', include(wagtailadmin_urls)),

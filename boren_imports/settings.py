@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'user_authentication',
     'newsletter',
     'blog',
+    'service_enquiry',
 ]
 
 MIDDLEWARE = [
