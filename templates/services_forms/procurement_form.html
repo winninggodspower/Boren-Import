@@ -6,8 +6,165 @@
 
 {% block body %}
 
-<main class="pt-20 pb-32">
-    
+<hr style="box-shadow: 0px 6px 16.6px rgba(0, 0, 0, 0.25)">
+
+<main class="pt-24 md:pt-32 pb-32 px-4 max-w-[986px] mx-auto">
+    <h1 class="font-bold md:font-extrabold font-be-vietnam text-custom-dark text-center text-2xl md:text-[40px] mb-16">CUSTOMER PROCUREMENT FORM</h1>
+
+    <form action="" method="post">
+        <fieldset>
+            <div class="mb-7">
+                <label class="form-label" for="">Category of Procurement <span
+                        class="text-[#F50707]">*</span></label>
+                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Select Category">
+            </div>
+
+            <div class="mb-7">
+                <label class="form-label" for="">Customer Type<span
+                        class="text-[#F50707]">*</span></label>
+                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Select customer type">
+            </div>
+
+            <div class="mb-7">
+                <label class="form-label" for="">Payment Currency<span
+                        class="text-[#F50707]">*</span></label>
+                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Select Currency">
+            </div>
+
+            <div class="mb-7">
+                <label class="form-label" for="">Payment Method<span
+                        class="text-[#F50707]">*</span></label>
+                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Select payment method">
+            </div>
+
+            <div class="mb-7">
+                <label class="form-label" for="">Purchase Order Name<span
+                        class="text-[#F50707]">*</span></label>
+                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter Purchase Order Name">
+            </div>
+
+            <div class="mb-7">
+                <label class="form-label" for="">Phone Number<span
+                        class="text-[#F50707]">*</span></label>
+                <input class="form-input h-14 md:h-[3.7rem] input-border" type="number" min="0" placeholder="Enter Phone Number">
+            </div>
+        </fieldset>
+
+        <fieldset class="mt-10 md:mt-16">
+            <legend class="font-bold md:font-extrabold font-be-vietnam text-custom-dark text-2xl md:text-4xl mb-8 md:mb-12">Personal Information</legend>
+
+            <div class="mb-7 flex gap-x-10 md:gap-x-16">
+                <div class="w-4/12">
+                    <label class="form-label" for="">Title<span class="text-[#F50707]">*</span></label>
+                    <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter First Name">
+                </div>
+                <div class="mb-7 grow">
+                    <label class="form-label" for="">Surname<span class="text-[#F50707]">*</span></label>
+                    <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter Surname">
+                </div>
+            </div>
+
+            <div class="mb-7">
+                <label class="form-label" for="">First Name <span
+                        class="text-[#F50707]">*</span></label>
+                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter First Name">
+            </div>
+
+            <div class="mb-7">
+                <label class="form-label" for="">Other Names</label>
+                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter First Name">
+            </div>
+
+            <div class="mb-7">
+                <label class="form-label" for="">Address <span
+                        class="text-[#F50707]">*</span></label>
+                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter full address">
+            </div>
+
+            <div class="mb-7">
+                <label class="form-label" for="">Nearest Landmark
+                    <span class="text-[#F50707]">*</span></label>
+                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter nearest landmark">
+            </div>
+
+            <div class="mb-7 flex gap-x-10 md:gap-x-16">
+                <div class="w-4/12">
+                    <label class="form-label" for="">Type of Order</label>
+                    <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter First Name">
+                </div>
+                <div class="mb-7 grow">
+                    <label class="form-label" for="">Email Address<span class="text-[#F50707]">*</span></label>
+                    <input class="form-input h-14 md:h-[3.7rem] input-border" type="email" placeholder="Enter Email address">
+                </div>
+            </div>
+
+            <div class="mb-7 flex gap-x-10 md:gap-x-16">
+                <div class="w-4/12">
+                    <label class="form-label" for="">Social Media</label>
+                    <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Select Social Media">
+                </div>
+                <div class="mb-7 grow">
+                    <label class="form-label" for="">Social Media Handle<span class="text-[#F50707]">*</span></label>
+                    <input class="form-input h-14 md:h-[3.7rem] input-border" type="email" placeholder="Enter social Mmedia handle*">
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="mt-10 md:mt-16">
+            <legend class="font-bold md:font-extrabold font-be-vietnam text-custom-dark text-2xl md:text-4xl  mb-8 md:mb-12">MAILING ADDRESS</legend>
+
+            <div class="mb-7">
+                <label class="form-label" for="">Recipient’s Name<span
+                        class="text-[#F50707]">*</span></label>
+                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter Recipient’s Name">
+            </div>
+
+            <div class="mb-7">
+                <label class="form-label" for="">Business Name <span class="text-sm font-normal">(if applicable)</span></label>
+                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter First Name">
+            </div>
+
+            <div class="mb-7">
+                <label class="form-label" for="">Address <span
+                        class="text-[#F50707]">*</span></label>
+                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter full address">
+            </div>
+
+            <div class="mb-7">
+                <label class="form-label" for="">State</label>
+                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Select State">
+            </div>
+
+            <div class="mb-7">
+                <label class="form-label" for="">Zip Code: </label>
+                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter Zip Code">
+            </div>
+
+            <div class="mb-7">
+                <label class="form-label" for="">Phone Number: </label>
+                <input class="form-input h-14 md:h-[3.7rem] input-border" type="number" min="0" placeholder="Enter Phone Number:">
+            </div>
+        </fieldset>
+
+        <div class="font-be-vietnam mt-4">
+            <h3 class="form-label text-custom-red-2 mb-2">Disclaimer</h3>
+            <p class="text-custom-gray">
+                All client whose goods are to be delivered to them and do not have to or want to pick up from our  office or live in an area where we do not have an office is required to have a means of identification.
+            </p>
+        </div>
+
+        <div class="flex items-start gap-x-4 md:gap-x-8 mt-10 md:mt-16">
+            <input class="bg-[#EFF0F2] mt-1" type="checkbox" name="agree">
+            <span class="italic text-sm text-custom-gray">
+                By clicking “SUBMIT” it is agree that the information/document supplied here are given herein, are on the basis of procurement of goods and therefore warrant this information is correct. That the terms and conditions governing the operation of this transaction which are presented overleaf and agree to be bound by them.
+            </span>
+        </div>
+
+        <div class="mt-10 md:mt-14">
+            <button type="submit"
+                class="submit-btn font-semibold">Submit</button>
+        </div>
+    </form>
 </main>
 
 {% endblock %}

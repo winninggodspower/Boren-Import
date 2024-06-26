@@ -25,4 +25,13 @@
     .form-legend{
         @apply font-semibold text-4xl md:text-[40px] text-custom-gray-3 mb-10 md:mb-16;
     }
+    .input-border{
+        @apply border border-black border-opacity-50;
+    }
+    .form-label{
+        @apply inline-block text-lg text-custom-gray-3 font-semibold mb-3;
+    }
+    .submit-btn{
+        @apply block mx-auto text-white rounded-[7px] bg-primary hover:bg-primary-dark active:ring-4 w-[300px] max-w-full py-3;
+    }
 }
