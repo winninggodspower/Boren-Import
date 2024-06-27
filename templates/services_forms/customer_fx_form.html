@@ -1,0 +1,145 @@
+{% extends "_base.html" %}
+
+{% block head %}
+<title>Procurement Form | Boren Import</title>
+{% endblock %}
+
+{% block body %}
+
+<hr style="box-shadow: 0px 6px 16.6px rgba(0, 0, 0, 0.25)">
+
+<main class="pt-24 md:pt-32 pb-32 px-4 max-w-[986px] mx-auto">
+    <h1 class="font-bold md:font-extrabold font-be-vietnam text-custom-dark text-center text-2xl md:text-[40px] mb-16">CUSTOMER FX FORM</h1>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <fieldset>
+            <div class="mb-7">
+                <label class="form-label" for="id_category">{{form.category_fx.label}}<span class="text-[#F50707]">*</span></label>
+                {{ form.category_fx }}
+            </div>
+            <div class="mb-7">
+                <label class="form-label" for="id_category">{{form.transaction_type.label}}<span class="text-[#F50707]">*</span></label>
+                {{ form.transaction_type }}
+            </div>
+            <div class="mb-7">
+                <label class="form-label" for="id_category">{{form.payment_method.label}}<span class="text-[#F50707]">*</span></label>
+                {{ form.payment_method }}
+            </div>
+            <div class="mb-7">
+                <label class="form-label" for="id_category">{{form.transaction_number.label}}<span class="text-[#F50707]">*</span></label>
+                {{ form.transaction_number }}
+            </div>
+        </fieldset>
+
+        <fieldset class="mt-10 md:mt-16">
+            <legend class="font-bold md:font-extrabold font-be-vietnam text-custom-dark text-2xl md:text-4xl mb-8 md:mb-12">SENDER'S INFORMATION(18+)</legend>
+
+            <div class="mb-7 flex gap-x-10 md:gap-x-16">
+                <div class="w-4/12 mb-7">
+                    <label class="form-label" for="id_category">{{form.sender_title.label}}<span class="text-[#F50707]">*</span></label>
+                    {{ form.sender_title }}
+                </div>
+                <div class="grow mb-7">
+                    <label class="form-label" for="id_category">{{form.sender_surname.label}}<span class="text-[#F50707]">*</span></label>
+                    {{ form.sender_surname }}
+                </div>
+            </div>
+            
+            <div class="mb-7">
+                <label class="form-label" for="id_category">{{form.sender_first_name.label}}<span class="text-[#F50707]">*</span></label>
+                {{ form.sender_first_name }}
+            </div>
+            <div class="mb-7">
+                <label class="form-label" for="id_category">{{form.sender_other_names.label}}<span class="text-[#F50707]">*</span></label>
+                {{ form.sender_other_names }}
+            </div>
+            <div class="mb-7">
+                <label class="form-label" for="id_category">{{form.sender_address.label}}<span class="text-[#F50707]">*</span></label>
+                {{ form.sender_address }}
+            </div>
+            <div class="mb-7">
+                <label class="form-label" for="id_category">{{form.sender_email.label}}<span class="text-[#F50707]">*</span></label>
+                {{ form.sender_email }}
+            </div>
+
+            <div class="mb-7 flex gap-x-10 md:gap-x-16">
+                <div class="w-4/12 mb-7">
+                    <label class="form-label" for="id_category">{{form.sender_amount_currency.label}}<span class="text-[#F50707]">*</span></label>
+                    {{ form.sender_amount_currency }}
+                </div>
+                <div class="grow mb-7">
+                    <label class="form-label" for="id_category">{{form.sender_amount.label}}<span class="text-[#F50707]">*</span></label>
+                    {{ form.sender_amount }}
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset class="mt-10 md:mt-16">
+            <legend class="font-bold md:font-extrabold font-be-vietnam text-custom-dark text-2xl md:text-4xl mb-8 md:mb-12">Receiver Information</legend>
+            <div class="mb-7 flex gap-x-10 md:gap-x-16">
+                <div class="w-4/12 mb-7">
+                    <label class="form-label" for="id_category">{{form.receiver_title.label}}<span class="text-[#F50707]">*</span></label>
+                    {{ form.receiver_title }}
+                </div>
+                <div class="grow mb-7">
+                    <label class="form-label" for="id_category">{{form.receiver_surname.label}}<span class="text-[#F50707]">*</span></label>
+                    {{ form.receiver_surname }}
+                </div>
+            </div>
+            <div class="mb-7">
+                <label class="form-label" for="id_category">{{form.receiver_first_name.label}}<span class="text-[#F50707]">*</span></label>
+                {{ form.receiver_first_name }}
+            </div>
+            <div class="mb-7">
+                <label class="form-label" for="id_category">{{form.receiver_other_names.label}}<span class="text-[#F50707]">*</span></label>
+                {{ form.receiver_other_names }}
+            </div>
+            <div class="mb-7">
+                <label class="form-label" for="id_category">{{form.receiver_address.label}}<span class="text-[#F50707]">*</span></label>
+                {{ form.receiver_address }}
+            </div>
+            <div class="mb-7">
+                <label class="form-label" for="id_category">{{form.receiver_email.label}}<span class="text-[#F50707]">*</span></label>
+                {{ form.receiver_email }}
+            </div>
+            <div class="mb-7">
+                <label class="form-label" for="id_category">{{form.receiver_postal_code.label}}<span class="text-[#F50707]">*</span></label>
+                {{ form.receiver_postal_code }}
+            </div>
+            <div class="mb-7">
+                <label class="form-label" for="id_category">{{form.receiver_bank_address.label}}<span class="text-[#F50707]">*</span></label>
+                {{ form.receiver_bank_address }}
+            </div>
+            <div class="mb-7">
+                <label class="form-label" for="id_category">{{form.receiver_account_number.label}}<span class="text-[#F50707]">*</span></label>
+                {{ form.receiver_account_number }}
+            </div>
+            <div class="mb-7">
+                <label class="form-label" for="id_category">{{form.receiver_iban.label}}<span class="text-[#F50707]">*</span></label>
+                {{ form.receiver_iban }}
+            </div>
+            <div class="mb-7 flex gap-x-10 md:gap-x-16">
+                <div class="w-4/12 mb-7">
+                    <label class="form-label" for="id_category">{{form.receiver_amount_currency.label}}<span class="text-[#F50707]">*</span></label>
+                    {{ form.receiver_amount_currency }}
+                </div>
+                <div class="grow mb-7">
+                    <label class="form-label" for="id_category">{{form.receiver_amount.label}}<span class="text-[#F50707]">*</span></label>
+                    {{ form.receiver_amount }}
+                </div>
+            </div>
+            <div class="mb-7">
+                <label class="form-label" for="id_category">{{form.transfer_reason.label}}<span class="text-[#F50707]">*</span></label>
+                {{ form.transfer_reason }}
+            </div>
+        </fieldset>
+
+        <div class="mt-10 md:mt-14">
+            <button type="submit" class="submit-btn font-semibold">Submit</button>
+        </div>
+    </form>
+</main>
+
+{% endblock %}

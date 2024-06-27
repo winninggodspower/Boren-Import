@@ -12,41 +12,43 @@
     <h1 class="font-bold md:font-extrabold font-be-vietnam text-custom-dark text-center text-2xl md:text-[40px] mb-16">CUSTOMER PROCUREMENT FORM</h1>
 
     <form action="" method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
         <fieldset>
             <div class="mb-7">
-                <label class="form-label" for="">Category of Procurement <span
-                        class="text-[#F50707]">*</span></label>
-                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Select Category">
+                <label class="form-label" for="id_category">Category of Procurement <span class="text-[#F50707]">*</span></label>
+                {{ form.category }}
+                {{ form.category.errors }}
             </div>
 
             <div class="mb-7">
-                <label class="form-label" for="">Customer Type<span
-                        class="text-[#F50707]">*</span></label>
-                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Select customer type">
+                <label class="form-label" for="id_customer_type">Customer Type <span class="text-[#F50707]">*</span></label>
+                {{ form.customer_type }}
+                {{ form.customer_type.errors }}
             </div>
 
             <div class="mb-7">
-                <label class="form-label" for="">Payment Currency<span
-                        class="text-[#F50707]">*</span></label>
-                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Select Currency">
+                <label class="form-label" for="id_payment_currency">Payment Currency <span class="text-[#F50707]">*</span></label>
+                {{ form.payment_currency }}
+                {{ form.payment_currency.errors }}
             </div>
 
             <div class="mb-7">
-                <label class="form-label" for="">Payment Method<span
-                        class="text-[#F50707]">*</span></label>
-                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Select payment method">
+                <label class="form-label" for="id_payment_method">Payment Method <span class="text-[#F50707]">*</span></label>
+                {{ form.payment_method }}
+                {{ form.payment_method.errors }}
             </div>
 
             <div class="mb-7">
-                <label class="form-label" for="">Purchase Order Name<span
-                        class="text-[#F50707]">*</span></label>
-                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter Purchase Order Name">
+                <label class="form-label" for="id_purchase_order_name">Purchase Order Name <span class="text-[#F50707]">*</span></label>
+                {{ form.purchase_order_name }}
+                {{ form.purchase_order_name.errors }}
             </div>
 
             <div class="mb-7">
-                <label class="form-label" for="">Phone Number<span
-                        class="text-[#F50707]">*</span></label>
-                <input class="form-input h-14 md:h-[3.7rem] input-border" type="number" min="0" placeholder="Enter Phone Number">
+                <label class="form-label" for="id_phone_number">Phone Number <span class="text-[#F50707]">*</span></label>
+                {{ form.phone_number }}
+                {{ form.phone_number.errors }}
             </div>
         </fieldset>
 
@@ -55,57 +57,64 @@
 
             <div class="mb-7 flex gap-x-10 md:gap-x-16">
                 <div class="w-4/12">
-                    <label class="form-label" for="">Title<span class="text-[#F50707]">*</span></label>
-                    <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter First Name">
+                    <label class="form-label" for="id_title">Title<span class="text-[#F50707]">*</span></label>
+                    {{ form.title }}
+                    {{ form.title.errors }}
                 </div>
                 <div class="mb-7 grow">
-                    <label class="form-label" for="">Surname<span class="text-[#F50707]">*</span></label>
-                    <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter Surname">
+                    <label class="form-label" for="id_surname">Surname<span class="text-[#F50707]">*</span></label>
+                    {{ form.surname }}
+                    {{ form.surname.errors }}
                 </div>
             </div>
 
             <div class="mb-7">
-                <label class="form-label" for="">First Name <span
-                        class="text-[#F50707]">*</span></label>
-                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter First Name">
+                <label class="form-label" for="id_first_name">First Name <span class="text-[#F50707]">*</span></label>
+                {{ form.first_name }}
+                {{ form.first_name.errors }}
             </div>
 
             <div class="mb-7">
-                <label class="form-label" for="">Other Names</label>
-                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter First Name">
+                <label class="form-label" for="id_other_names">Other Names</label>
+                {{ form.other_names }}
+                {{ form.other_names.errors }}
             </div>
 
             <div class="mb-7">
-                <label class="form-label" for="">Address <span
-                        class="text-[#F50707]">*</span></label>
-                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter full address">
+                <label class="form-label" for="id_address">Address <span class="text-[#F50707]">*</span></label>
+                {{ form.address }}
+                {{ form.address.errors }}
             </div>
 
             <div class="mb-7">
-                <label class="form-label" for="">Nearest Landmark
-                    <span class="text-[#F50707]">*</span></label>
-                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter nearest landmark">
+                <label class="form-label" for="id_nearest_landmark">Nearest Landmark <span class="text-[#F50707]">*</span></label>
+                {{ form.nearest_landmark }}
+                {{ form.nearest_landmark.errors }}
             </div>
 
             <div class="mb-7 flex gap-x-10 md:gap-x-16">
                 <div class="w-4/12">
-                    <label class="form-label" for="">Type of Order</label>
-                    <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter First Name">
+                    <label class="form-label" for="id_type_of_order">Type of Order</label>
+                    {{ form.type_of_order }}
+                    {{ form.type_of_order.errors }}
                 </div>
                 <div class="mb-7 grow">
-                    <label class="form-label" for="">Email Address<span class="text-[#F50707]">*</span></label>
-                    <input class="form-input h-14 md:h-[3.7rem] input-border" type="email" placeholder="Enter Email address">
+                    <label class="form-label" for="id_email">Email Address<span class="text-[#F50707]">*</span></label>
+                    {{ form.email }}
+                    {{ form.email.errors }}
                 </div>
             </div>
 
             <div class="mb-7 flex gap-x-10 md:gap-x-16">
                 <div class="w-4/12">
-                    <label class="form-label" for="">Social Media</label>
-                    <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Select Social Media">
+                    <label class="form-label" for="id_social_media">Social Media</label>
+                    {{ form.social_media }}
+                    {{ form.social_media.errors }}
                 </div>
                 <div class="mb-7 grow">
-                    <label class="form-label" for="">Social Media Handle<span class="text-[#F50707]">*</span></label>
-                    <input class="form-input h-14 md:h-[3.7rem] input-border" type="email" placeholder="Enter social Mmedia handle*">
+                    <label class="form-label" for="id_social_media_handle">Social Media Handle<span class="text-[#F50707]">*</span></label>
+                    {{ form.social_media_handle }}
+                    {{ form.social_media_handle.errors }}
                 </div>
             </div>
         </fieldset>
@@ -114,55 +123,59 @@
             <legend class="font-bold md:font-extrabold font-be-vietnam text-custom-dark text-2xl md:text-4xl  mb-8 md:mb-12">MAILING ADDRESS</legend>
 
             <div class="mb-7">
-                <label class="form-label" for="">Recipient’s Name<span
-                        class="text-[#F50707]">*</span></label>
-                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter Recipient’s Name">
+                <label class="form-label" for="id_recipient_name">Recipient’s Name<span class="text-[#F50707]">*</span></label>
+                {{ form.recipient_name }}
+                {{ form.recipient_name.errors }}
             </div>
 
             <div class="mb-7">
-                <label class="form-label" for="">Business Name <span class="text-sm font-normal">(if applicable)</span></label>
-                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter First Name">
+                <label class="form-label" for="id_business_name">Business Name <span class="text-sm font-normal">(if applicable)</span></label>
+                {{ form.business_name }}
+                {{ form.business_name.errors }}
             </div>
 
             <div class="mb-7">
-                <label class="form-label" for="">Address <span
-                        class="text-[#F50707]">*</span></label>
-                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter full address">
+                <label class="form-label" for="id_mailing_address">Address <span class="text-[#F50707]">*</span></label>
+                {{ form.mailing_address }}
+                {{ form.mailing_address.errors }}
             </div>
 
             <div class="mb-7">
-                <label class="form-label" for="">State</label>
-                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Select State">
+                <label class="form-label" for="id_state">State</label>
+                {{ form.state }}
+                {{ form.state.errors }}
             </div>
 
             <div class="mb-7">
-                <label class="form-label" for="">Zip Code: </label>
-                <input class="form-input h-14 md:h-[3.7rem] input-border" type="text" placeholder="Enter Zip Code">
+                <label class="form-label" for="id_zip_code">Zip Code: </label>
+                {{ form.zip_code }}
+                {{ form.zip_code.errors }}
             </div>
 
             <div class="mb-7">
-                <label class="form-label" for="">Phone Number: </label>
-                <input class="form-input h-14 md:h-[3.7rem] input-border" type="number" min="0" placeholder="Enter Phone Number:">
+                <label class="form-label" for="id_mailing_phone_number">Phone Number: </label>
+                {{ form.mailing_phone_number }}
+                {{ form.mailing_phone_number.errors }}
             </div>
         </fieldset>
 
         <div class="font-be-vietnam mt-4">
             <h3 class="form-label text-custom-red-2 mb-2">Disclaimer</h3>
             <p class="text-custom-gray">
-                All client whose goods are to be delivered to them and do not have to or want to pick up from our  office or live in an area where we do not have an office is required to have a means of identification.
+                All clients whose goods are to be delivered to them and do not have to or want to pick up from our office or live in an area where we do not have an office are required to have a means of identification.
             </p>
         </div>
 
         <div class="flex items-start gap-x-4 md:gap-x-8 mt-10 md:mt-16">
-            <input class="bg-[#EFF0F2] mt-1" type="checkbox" name="agree">
+            {{ form.agree }}
+            {{ form.agree.errors }}
             <span class="italic text-sm text-custom-gray">
-                By clicking “SUBMIT” it is agree that the information/document supplied here are given herein, are on the basis of procurement of goods and therefore warrant this information is correct. That the terms and conditions governing the operation of this transaction which are presented overleaf and agree to be bound by them.
+                By clicking “SUBMIT” it is agreed that the information/document supplied here are given herein, are on the basis of procurement of goods and therefore warrant this information is correct. That the terms and conditions governing the operation of this transaction which are presented overleaf and agree to be bound by them.
             </span>
         </div>
 
         <div class="mt-10 md:mt-14">
-            <button type="submit"
-                class="submit-btn font-semibold">Submit</button>
+            <button type="submit" class="submit-btn font-semibold">Submit</button>
         </div>
     </form>
 </main>
