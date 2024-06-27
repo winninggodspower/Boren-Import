@@ -143,7 +143,7 @@ class CustomerFXForm(forms.Form):
         label='Bank Address',
         widget=forms.TextInput(attrs={'placeholder': 'Enter Bank Address'})
     )
-    receiver_account_number = forms.IntegerField(
+    receiver_account_number = forms.CharField(
         max_length=50,
         required=True,
         label='Account Number',
