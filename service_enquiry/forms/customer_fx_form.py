@@ -42,7 +42,7 @@ class CustomerFXForm(forms.Form):
         max_length=50,
         required=True,
         label='Transaction Number',
-        widget=forms.TextInput(attrs={'placeholder': 'Enter Transaction Number'})
+        widget=forms.NumberInput(attrs={'placeholder': 'Enter Transaction Number'})
     )
 
     # Sender Information
