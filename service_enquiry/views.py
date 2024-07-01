@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 
 from service_enquiry.forms.customer_fx_form import CustomerFXForm
+from service_enquiry.forms.risk_attestation_form import RiskAttestationForm
 from .forms.procurement_form import ProcurementForm
 
 # Create your views here.
@@ -31,3 +32,17 @@ def customer_fx_form(request):
         form = CustomerFXForm()
 
     return render(request, 'services_forms/customer_fx_form.html', {'form': form})
+
+
+def risk_attestation_form(request):
+    if request.method == 'POST':
+        form = RiskAttestationForm(request.POST)
+
+        if form.is_valid():
+            # Handle form data
+            return redirect('success')
+
+    else:
+        form = RiskAttestationForm()
+
+    return render(request, 'services_forms/customer_refund_form.html', {'form': form})
