@@ -1,0 +1,97 @@
+{% extends "_base.html" %}
+
+{% block head %}
+<title>Risk Attestation Form</title>
+{% endblock %}
+
+{% block body %}
+<hr style="box-shadow: 0px 6px 16.6px rgba(0, 0, 0, 0.25)">
+
+<main class="pt-24 md:pt-32 pb-32 px-4 max-w-[986px] mx-auto">
+    <h1 class="font-bold md:font-extrabold text-custom-dark text-center text-2xl md:text-[40px] mb-16">Risk Attestation Form</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        
+        <fieldset>
+            <legend class="uppercase font-bold text-custom-dark text-2xl md:text-4xl mb-8 md:mb-12">Personal Information</legend>
+            <div class="mb-7">
+                <label for="id_person_name" class="form-label">Name of Person/Company <span class="text-[#F50707]">*</span></label>
+                {{ form.person_name }}
+            </div>
+            <div class="mb-7">
+                <label for="id_person_address" class="form-label">Address <span class="text-[#F50707]">*</span></label>
+                {{ form.person_address }}
+            </div>
+            <div class="mb-7">
+                <label for="id_person_landmark" class="form-label">Nearest Landmark <span class="text-[#F50707]">*</span></label>
+                {{ form.person_landmark }}
+            </div>
+            <div class="mb-7">
+                <label for="id_person_phone" class="form-label">Phone Number <span class="text-[#F50707]">*</span></label>
+                {{ form.person_phone }}
+            </div>
+        </fieldset>
+
+        <fieldset class="mt-10 md:mt-16">
+            <legend class="uppercase font-bold text-custom-dark text-2xl md:text-4xl mb-8 md:mb-12">Guarantors Information</legend>
+            <div class="mb-7">
+                <label for="id_guarantor_name" class="form-label">Name of Guarantor <span class="text-[#F50707]">*</span></label>
+                {{ form.guarantor_name }}
+            </div>
+            <div class="mb-7">
+                <label for="id_guarantor_address" class="form-label">Address <span class="text-[#F50707]">*</span></label>
+                {{ form.guarantor_address }}
+            </div>
+            <div class="mb-7">
+                <label for="id_guarantor_landmark" class="form-label">Nearest Landmark <span class="text-[#F50707]">*</span></label>
+                {{ form.guarantor_landmark }}
+            </div>
+            <div class="mb-7">
+                <label for="id_guarantor_phone" class="form-label">Phone Number <span class="text-[#F50707]">*</span></label>
+                {{ form.guarantor_phone }}
+            </div>
+            <div class="flex items-start gap-x-4 md:gap-x-8 mb-7 ms-7">
+                <input class="bg-[#EFF0F2] mt-1" type="checkbox">
+                <span class="italic text-sm text-custom-gray">
+                    I agree to be present and be held responsible should this transaction go wrong 
+                </span>
+            </div>
+        </fieldset>
+
+        <fieldset class="mt-10 md:mt-16">
+            <legend class="uppercase font-bold text-custom-dark text-2xl md:text-4xl mb-8 md:mb-12">Supplier Details</legend>
+            <div class="mb-7">
+                <label for="id_supplier_name" class="form-label">Name of Supplier/Company <span class="text-[#F50707]">*</span></label>
+                {{ form.supplier_name }}
+            </div>
+            <div class="mb-7">
+                <label for="id_supplier_address" class="form-label">Address <span class="text-[#F50707]">*</span></label>
+                {{ form.supplier_address }}
+            </div>
+            <div class="mb-7">
+                <label for="id_supplier_phone" class="form-label">Phone Number <span class="text-[#F50707]">*</span></label>
+                {{ form.supplier_phone }}
+            </div>
+           
+            <div class="mb-7 flex gap-x-10 md:gap-x-16 items-end">
+                <div class="w-4/12">
+                    <label for="id_amount_to_pay" class="form-label">Amount to be Paid (to supplier)</label>
+                    {{ form.amount_currency }}
+                    {{ form.amount_currency.errors }}
+                </div>
+                <div class="grow">
+                    {{ form.amount_to_pay }}
+                    {{ form.amount_to_pay.errors }}
+                </div>
+            </div>
+        </fieldset>
+
+        <div class="mt-10 md:mt-14">
+            <button type="submit" class="submit-btn font-semibold">Submit</button>
+        </div>
+    </form>
+</main>
+
+{% endblock %}

@@ -45,4 +45,4 @@ def risk_attestation_form(request):
     else:
         form = RiskAttestationForm()
 
-    return render(request, 'services_forms/customer_refund_form.html', {'form': form})
+    return render(request, 'services_forms/risk_attestation_form.html', {'form': form})

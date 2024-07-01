@@ -1,178 +1,97 @@
 from django import forms
 
 class RiskAttestationForm(forms.Form):
-    CATEGORY_FX_CHOICES = [
-        ('category1', 'Category 1'),
-        ('category2', 'Category 2'),
-    ]
-    TRANSACTION_TYPE_CHOICES = [
-        ('type1', 'Type 1'),
-        ('type2', 'Type 2'),
-    ]
-    PAYMENT_METHOD_CHOICES = [
-        ('credit_card', 'Credit Card'),
-        ('bank_transfer', 'Bank Transfer'),
-        ('paypal', 'PayPal'),
-    ]
-    CURRENCY_CHOICES = [
-        ('USD', 'USD'),
-        ('EUR', 'EUR'),
-    ]
-
-    # FX Transaction Details
-    category_fx = forms.ChoiceField(
-        choices=CATEGORY_FX_CHOICES,
-        required=True,
-        label='Category of FX',
-        widget=forms.Select(attrs={'placeholder': 'Select Category of FX'})
+    # Personal Information
+    person_name = forms.CharField(
+        label='Name of Person', 
+        max_length=100,
+        widget=forms.TextInput(attrs={
+            'placeholder': 'Enter the name of the person',
+        })
     )
-    transaction_type = forms.ChoiceField(
-        choices=TRANSACTION_TYPE_CHOICES,
-        required=True,
-        label='Transaction Type',
-        widget=forms.Select(attrs={'placeholder': 'Select Transaction Type'})
+    person_address = forms.CharField(
+        label='Address', 
+        widget=forms.Textarea(attrs={
+            'placeholder': 'Enter the address of the person',
+            'class': 'form-textarea'
+        })
     )
-    payment_method = forms.ChoiceField(
-        choices=PAYMENT_METHOD_CHOICES,
-        required=True,
-        label='Payment Method',
-        widget=forms.Select(attrs={'placeholder': 'Select Payment Method'})
+    person_landmark = forms.CharField(
+        label='Nearest Landmark', 
+        max_length=100,
+        widget=forms.TextInput(attrs={
+            'placeholder': 'Enter the nearest landmark',
+        })
     )
-    transaction_number = forms.CharField(
-        max_length=50,
-        required=True,
-        label='Transaction Number',
-        widget=forms.NumberInput(attrs={'placeholder': 'Enter Transaction Number'})
+    person_phone = forms.CharField(
+        label='Phone Number', 
+        max_length=15,
+        widget=forms.TextInput(attrs={
+            'placeholder': 'Enter the phone number',
+        })
     )
 
-    # Sender Information
-    sender_title = forms.CharField(
-        max_length=50,
-        required=True,
-        label='Title',
-        widget=forms.TextInput(attrs={'placeholder': 'Enter Title'})
+    # Guarantors Information
+    guarantor_name = forms.CharField(
+        label='Name of Guarantor', 
+        max_length=100,
+        widget=forms.TextInput(attrs={
+            'placeholder': 'Enter the name of the guarantor',
+        })
     )
-    sender_surname = forms.CharField(
-        max_length=50,
-        required=True,
-        label='Surname',
-        widget=forms.TextInput(attrs={'placeholder': 'Enter Surname'})
+    guarantor_address = forms.CharField(
+        label='Address', 
+        widget=forms.Textarea(attrs={
+            'placeholder': 'Enter the address of the guarantor',
+            'class': 'form-textarea'
+        })
     )
-    sender_first_name = forms.CharField(
-        max_length=50,
-        required=True,
-        label='First Name',
-        widget=forms.TextInput(attrs={'placeholder': 'Enter First Name'})
+    guarantor_landmark = forms.CharField(
+        label='Nearest Landmark', 
+        max_length=100,
+        widget=forms.TextInput(attrs={
+            'placeholder': 'Enter the nearest landmark',
+        })
     )
-    sender_other_names = forms.CharField(
-        max_length=50,
-        required=False,
-        label='Other Names',
-        widget=forms.TextInput(attrs={'placeholder': 'Enter Other Names'})
-    )
-    sender_address = forms.CharField(
-        max_length=255,
-        required=True,
-        label='Address',
-        widget=forms.TextInput(attrs={'placeholder': 'Enter Address'})
-    )
-    sender_email = forms.EmailField(
-        required=True,
-        label='Email',
-        widget=forms.EmailInput(attrs={'placeholder': 'Enter Email'})
-    )
-    sender_amount_currency = forms.ChoiceField(
-        choices=CURRENCY_CHOICES,
-        required=True,
-        label='Amount',
-        widget=forms.Select(attrs={'placeholder': 'Select Currency'})
-    )
-    sender_amount = forms.DecimalField(
-        max_digits=10,
-        decimal_places=2,
-        required=True,
-        label='',
-        widget=forms.TextInput(attrs={'placeholder': 'Enter Amount'})
+    guarantor_phone = forms.CharField(
+        label='Phone Number', 
+        max_length=15,
+        widget=forms.TextInput(attrs={
+            'placeholder': 'Enter the phone number',
+        })
     )
 
-    # Receiver Information
-    receiver_title = forms.CharField(
-        max_length=50,
-        required=True,
-        label='Title',
-        widget=forms.TextInput(attrs={'placeholder': 'Enter Title'})
+    # Supplier Details
+    supplier_name = forms.CharField(
+        label='Name of Supplier/Company', 
+        max_length=100,
+        widget=forms.TextInput(attrs={
+            'placeholder': 'Enter the name of the supplier/company',
+        })
     )
-    receiver_surname = forms.CharField(
-        max_length=50,
-        required=True,
-        label='Surname',
-        widget=forms.TextInput(attrs={'placeholder': 'Enter Surname'})
+    supplier_address = forms.CharField(
+        label='Address', 
+        widget=forms.Textarea(attrs={
+            'placeholder': 'Enter the address of the supplier/company',
+            'class': 'form-textarea'
+        })
     )
-    receiver_first_name = forms.CharField(
-        max_length=50,
-        required=True,
-        label='First Name',
-        widget=forms.TextInput(attrs={'placeholder': 'Enter First Name'})
+    supplier_phone = forms.CharField(
+        label='Phone Number', 
+        max_length=15,
+        widget=forms.TextInput(attrs={
+            'placeholder': 'Enter the phone number',
+        })
     )
-    receiver_other_names = forms.CharField(
-        max_length=50,
-        required=False,
-        label='Other Names',
-        widget=forms.TextInput(attrs={'placeholder': 'Enter Other Names'})
+    amount_currency = forms.ChoiceField(
+        label='Currency',
+        choices=[('USD', 'USD'), ('EUR', 'EUR'), ('GBP', 'GBP')],
     )
-    receiver_address = forms.CharField(
-        max_length=255,
-        required=True,
-        label='Address',
-        widget=forms.TextInput(attrs={'placeholder': 'Enter Address'})
-    )
-    receiver_email = forms.EmailField(
-        required=True,
-        label='Email',
-        widget=forms.EmailInput(attrs={'placeholder': 'Enter Email'})
-    )
-    receiver_postal_code = forms.CharField(
-        max_length=20,
-        required=True,
-        label='Postal Code',
-        widget=forms.TextInput(attrs={'placeholder': 'Enter Postal Code'})
-    )
-    receiver_bank_address = forms.CharField(
-        max_length=255,
-        required=True,
-        label='Bank Address',
-        widget=forms.TextInput(attrs={'placeholder': 'Enter Bank Address'})
-    )
-    receiver_account_number = forms.CharField(
-        max_length=50,
-        required=True,
-        label='Account Number',
-        widget=forms.NumberInput(attrs={'placeholder': 'Enter Account Number'})
-    )
-    receiver_iban = forms.CharField(
-        max_length=50,
-        required=True,
-        label='IBAN',
-        widget=forms.TextInput(attrs={'placeholder': 'Enter IBAN'})
-    )
-    receiver_amount_currency = forms.ChoiceField(
-        choices=CURRENCY_CHOICES,
-        required=True,
-        label='Amount Currency',
-        widget=forms.Select(attrs={'placeholder': 'Select Currency'})
-    )
-    receiver_amount = forms.DecimalField(
-        max_digits=10,
-        decimal_places=2,
-        required=True,
-        label='Amount Received',
-        widget=forms.TextInput(attrs={'placeholder': 'Enter Amount'})
-    )
-    transfer_reason = forms.CharField(
-        max_length=255,
-        required=True,
-        label='Transfer Reason',
-        widget=forms.TextInput(attrs={'placeholder': 'Enter Transfer Reason'})
+    amount_to_pay = forms.DecimalField(
+        label='Amount to be Paid',
+        widget=forms.TextInput(attrs={
+            'placeholder': 'Enter the amount to be paid',
+        })
     )
 
     def __init__(self, *args, **kwargs):
