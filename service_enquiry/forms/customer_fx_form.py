@@ -17,6 +17,7 @@ class CustomerFXForm(forms.Form):
     CURRENCY_CHOICES = [
         ('USD', 'USD'),
         ('EUR', 'EUR'),
+        ('NGN', 'NGN'),
     ]
 
     # FX Transaction Details

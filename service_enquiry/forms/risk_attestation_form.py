@@ -26,7 +26,7 @@ class RiskAttestationForm(forms.Form):
     person_phone = forms.CharField(
         label='Phone Number', 
         max_length=15,
-        widget=forms.TextInput(attrs={
+        widget=forms.NumberInput(attrs={
             'placeholder': 'Enter the phone number',
         })
     )
@@ -56,7 +56,7 @@ class RiskAttestationForm(forms.Form):
     guarantor_phone = forms.CharField(
         label='Phone Number', 
         max_length=15,
-        widget=forms.TextInput(attrs={
+        widget=forms.NumberInput(attrs={
             'placeholder': 'Enter the phone number',
         })
     )
@@ -79,13 +79,13 @@ class RiskAttestationForm(forms.Form):
     supplier_phone = forms.CharField(
         label='Phone Number', 
         max_length=15,
-        widget=forms.TextInput(attrs={
+        widget=forms.NumberInput(attrs={
             'placeholder': 'Enter the phone number',
         })
     )
     amount_currency = forms.ChoiceField(
         label='Currency',
-        choices=[('USD', 'USD'), ('EUR', 'EUR'), ('GBP', 'GBP')],
+        choices=[('USD', 'USD'), ('EUR', 'EUR'), ('NGN', 'NGN')],
     )
     amount_to_pay = forms.DecimalField(
         label='Amount to be Paid',
