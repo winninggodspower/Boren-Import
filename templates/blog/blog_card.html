@@ -2,7 +2,8 @@
 {% load static %}
 <div class="flex gap-x-5 md:block h-[160px] md:h-auto w-[95%] max-w-[658px] mx-auto font-be-vietnam">
     {% if post.image %}
-        {% image post.image class="md:w-full h-full md:h-[600px] rounded-[10px] object-cover" fill-160x100 %}
+        <!-- {% image post.image class="md:w-full h-full md:h-[600px] rounded-[10px] object-cover" fill-160x100 %} -->
+        <img src="{{post.image.file.url}}" class="md:w-full h-full md:h-[600px] rounded-[10px] object-cover" alt="">
     {% endif %}
     <div href="{% pageurl post %}" class="block">
         <h4 class="mt-0 md:mt-3 text-base md:text-3xl font-medium leading-none hover:text-primary">

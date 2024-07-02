@@ -45,9 +45,7 @@ class BlogPage(Page):
     category = ParentalKey(Category, on_delete=models.SET_NULL, blank=True, null=True)
     image = models.ForeignKey(
         'wagtailimages.Image',
-        null=True,
-        blank=True,
-        on_delete=models.SET_NULL,
+        on_delete=models.RESTRICT,
         related_name='+'
     )
 
