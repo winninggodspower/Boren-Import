@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, resolve_url
 from django.http import HttpResponseRedirect, HttpResponse
 from django.contrib import messages
 
@@ -57,26 +57,27 @@ def login_user(request):
         form = LoginForm(request.POST)
 
         if form.is_valid():
-            print(form.cleaned_data)
-            username = User.objects.filter(email = form.cleaned_data.get('email')).first()
-            # the authenticate function returns the user object if the user is found else it returns none
-            user = authenticate(username=username, password=form.cleaned_data.get('password'))
-            if user:
+            email = form.cleaned_data.get('email')
+            password = form.cleaned_data.get('password')
+            user = authenticate(request, username=email, password=password)
+            
+            if user is not None:
                 login(request, user)
-                messages.success(request, 
-                f'successfully logged in as {user.username}')
+                messages.success(request, f'successfully logged in as {user.email}')
                 return redirect('/')
             else:
                 messages.error(request, 'Invalid credentials')
-                # form.add_error('user not found')
                 return redirect('/login')
 
         # if form is not valid render the template again with pre populated data
         else:
+            print('invalid form')
+            print(form.errors) 
             return render(request, 'login.html', {'form': form})
     else:
         form = LoginForm()
         return render(request, 'login.html', {'form': form})
+
 
 
 @login_required

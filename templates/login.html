@@ -13,25 +13,20 @@
             <legend class="font-semibold text-4xl md:text-[40px] text-custom-gray-3 mb-10 md:mb-16">Welcome Back!</legend>
             <div>
                 <div class="mb-8">
-                    <label class="inline-block text-lg text-custom-gray-3 font-semibold mb-3" for="">Email or Phone Number<span class="text-[#F50707]">*</span></label>
-                    <input class="form-input" type="email" placeholder="Enter Email Address or Phone Number">
+                    <label class="inline-block text-lg text-custom-gray-3 font-semibold mb-3" for="">Email<span class="text-[#F50707]">*</span></label>
+                    {{ form.email }}
+                    {{ form.email.errors }}
                 </div>
 
                 <div class="mb-8">
                     <label class="inline-block text-lg text-custom-gray-3 font-semibold mb-3" for="">Password <span class="text-[#F50707]">*</span></label>
-                    <input class="form-input" type="password" placeholder="Enter Password">
+                    {{ form.password }}
+                    {{ form.password.errors }}
                 </div>
 
                 <div class="mb-4">
                     <button type="submit" class="block mx-auto text-white rounded-[7px] bg-primary hover:bg-primary-dark active:ring-4 w-[300px] max-w-full py-3">Log In</button>
                 </div>
-            <!-- {% for field in form %}
-            <div class="fieldWrapper my-3">
-                {{ field.label_tag }}
-                {{ field }}
-                {{ field.errors }}
-            </div>
-            {% endfor %} -->
             <p class="fw-bold text-center">Forgot password? <a class="text-custom-red" href="{% url 'password_reset' %}" class="text-decoration-none"> reset password</a></p>
             <p class="fw-bold text-center mt-2 md:mt-[15px]">Don't have an account? <a class="text-primary" href="{% url 'register' %}" class="text-decoration-none"> Sign Up</a></p>
             <!-- <input class="btn btn-primary" type="submit" value="Submit"> -->
