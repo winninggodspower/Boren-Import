@@ -70,10 +70,10 @@
                 <div class="md:flex gap-6">
                     <a href=" {% if user.is_authenticated %} {% url "logout" %} {% else %}  {% url "login" %} {% endif %}" type="button"
                         class="text-white bg-primary hover:bg-primary-dark focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-[5px] px-6 py-2 text-center"> {% if user.is_authenticated %}Logout {% else %} Login {% endif %}</a>
-                    </button>
+                    {% if not user.is_authenticated %}
                     <a href="{% url "register" %}" type="button"
                         class="text-primary border border-1 border-primary transition-all hover:bg-primary hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-[5px] px-6 py-2 text-center">Signup</a>
-                    </button>
+                    {% endif %}
                 </div>
             </ul>
         </div>

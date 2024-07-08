@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 
 from service_enquiry.forms.customer_fx_form import CustomerFXForm
 from service_enquiry.forms.risk_attestation_form import RiskAttestationForm
@@ -10,11 +11,9 @@ def procurement_form(request):
     if request.method == 'POST':
         form = ProcurementForm(request.POST)
         if form.is_valid():
-            # Process the data in form.cleaned_data as required
-            # For example, save it to the database
-            # ...
-
-            return redirect('success_url')  # Replace 'success_url' with your actual success URL
+            messages.error(request, 'Successfuly submited procurement form. our team will get back to you')
+            form.save()
+            return redirect('/')  # Replace 'success_url' with your actual success URL
     else:
         form = ProcurementForm()
 
@@ -25,8 +24,9 @@ def customer_fx_form(request):
         form = CustomerFXForm(request.POST)
 
         if form.is_valid():
-            # Handle form data
-            return redirect('success')
+            messages.error(request, 'Successfuly submited fx form. our team will get back to you')
+            form.save()
+            return redirect('/')  # Replace 'success_url' with your actual success URL
 
     else:
         form = CustomerFXForm()
@@ -39,8 +39,9 @@ def risk_attestation_form(request):
         form = RiskAttestationForm(request.POST)
 
         if form.is_valid():
-            # Handle form data
-            return redirect('success')
+            messages.error(request, 'Successfuly submited risk attestation form. our team will get back to you')
+            form.save()
+            return redirect('/')
 
     else:
         form = RiskAttestationForm()
