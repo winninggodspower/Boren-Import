@@ -22,3 +22,10 @@
     `> python manage.py runserver`
 
 > if you've done this step before. to run this code another time you can just do step 6 alone.
+
+## Setup tailwindcss compilling
+> note: you need to have npm install
+1. install tailwindcss
+    `> npm install tailwindcss`
+1. Install flowbite
+    `> npm install flowbite`

@@ -1,0 +1,12 @@
+<form class="max-w-md mx-auto md:mx-0" action="/tracking/submit/" method="post">
+  {% csrf_token %}
+  <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+  <div class="relative w-[483px] h-[61px] max-w-[85vw]">
+    <input type="search" id="default-search"
+      class="block w-full p-4 text-sm text-gray-900 border rounded-md border-gray ps-10 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 focus-visible:outline-none"
+      placeholder="Input tracking ID" {% if tracking_id %} value="{{tracking_id}}" {% endif %}  name="tracking_id" required />
+    <button type="submit"
+      class="text-white text-sm font-semibold absolute end-2.5 top-[50%] translate-y-[-60%] bg-primary-dark hover:bg-primary focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-md px-4 py-2 ">TRACK
+      SHIPMENT</button>
+  </div>
+</form>
