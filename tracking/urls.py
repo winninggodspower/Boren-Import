@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('submit/', views.submit_tracking, name='tracking_form'),
-    path('details/<str:tracking_id>/', views.tracking, name='tracking_details'),
+    path('details/<str:tracking_number>/', views.tracking, name='tracking_details'),
 ]

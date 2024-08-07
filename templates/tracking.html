@@ -10,16 +10,16 @@
     <div class="container max-w-screen-xl px-2 mx-auto text-white ">
         <h2 class="text-center text-3xl md:text-[45px] leading-[45px] font-extrabold capitalize">Tracking</h2>
         <div class="flex justify-center mt-6">
-            {% include "components/tracking_form.html" %}
+            {% include "components/tracking/tracking_form.html" %}
         </div>
     </div>
 </section>
 
 <section class="flex flex-col gap-6 p-4 md:p-6">
-    <div class="flex items-center justify-between">
-        <div>
-            <h1 class="text-2xl font-bold">Acme Wireless Headphones</h1>
-            <p class="text-muted-foreground">Order #{{ tracking_id }}</p>
+    <div class="sm:flex items-center justify-between">
+        <div class="mb-4 sm:mb-0">
+            <h1 class="text-xl md:text-2xl font-bold">Tracking Information</h1>
+            <p class="text-muted-foreground">Order #{{tracking.tracker.trackerId }}</p>
         </div>
         <a href="javascript: location.reload();" class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 mr-2">
@@ -31,74 +31,31 @@
             Refresh
         </a>
     </div>
+    
+
+    {% include "components/tracking/tracking_status.html" %}
     <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
         <div class="flex flex-col space-y-1.5 p-6">
-            <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Shipping Status</h3>
-        </div>
-        <div class="p-6">
-            <div class="grid md:grid-cols-5 gap-4">
-                <div class="flex flex-col items-center gap-2">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground">
-                        <div class="w-5 h-5"></div>
-                    </div>
-                    <div class="text-sm font-medium">Order Placed</div>
-                    <div class="text-xs text-muted-foreground">June 1, 2023</div>
-                </div>
-                <div class="flex flex-col items-center gap-2">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground">
-                        <div class="w-5 h-5"></div>
-                    </div>
-                    <div class="text-sm font-medium">Shipped</div>
-                    <div class="text-xs text-muted-foreground">June 3, 2023</div>
-                </div>
-                <div class="flex flex-col items-center gap-2">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full bg-primary text-primary-foreground">
-                        <div class="w-5 h-5"></div>
-                    </div>
-                    <div class="text-sm font-medium">In Transit</div>
-                    <div class="text-xs text-muted-foreground">June 4, 2023</div>
-                </div>
-                <div class="flex flex-col items-center gap-2">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full bg-green-600 text-white">
-                        <div class="w-5 h-5"></div>
-                    </div>
-                    <div class="text-sm font-medium">Delivered</div>
-                    <div class="text-xs text-muted-foreground">June 5, 2023</div>
-                </div>
-                <div class="flex flex-col items-center gap-2">
-                    <div class="flex items-center justify-center w-10 h-10 rounded-full bg-muted text-muted-foreground">
-                        <div class="w-5 h-5"></div>
-                    </div>
-                    <div class="text-sm font-medium">Completed</div>
-                    <div class="text-xs text-muted-foreground">June 6, 2023</div>
-                </div>
-            </div>
-            <div aria-valuemax="100" aria-valuemin="0" role="progressbar" data-state="indeterminate" data-max="100" class="relative h-2 overflow-hidden rounded-full bg-primary/20 w-full mt-4">
-                <div data-state="indeterminate" data-max="100" class="h-full w-full flex-1 bg-primary transition-all" style="transform: translateX(0%);"></div>
-            </div>
-        </div>
-    </div>
-    <div class="rounded-lg border bg-card text-card-foreground shadow-sm" data-v0-t="card">
-        <div class="flex flex-col space-y-1.5 p-6">
-            <h3 class="whitespace-nowrap text-2xl font-semibold leading-none tracking-tight">Shipping Details</h3>
+            <h3 class="whitespace-nowrap text-xl md:text-2xl font-semibold leading-none tracking-tight">Shipping Details</h3>
         </div>
         <div class="p-6">
             <div class="grid md:grid-cols-2 gap-4">
                 <div>
                     <div class="font-medium">Carrier</div>
-                    <div>FedEx</div>
+                    <div class="">FedEx</div>
                 </div>
                 <div>
                     <div class="font-medium">Tracking Number</div>
-                    <div>1Z 999 AA1 13 0123 4567</div>
+                    <div class="">{{tracking.tracker.trackingNumber}}</div>
                 </div>
                 <div>
-                    <div class="font-medium">Delivery Date</div>
-                    <div>June 5, 2023</div>
+                    <div class="font-medium">Estimated Delivery Date</div>
+                    <div class="">{{ tracking.shipment.delivery.estimatedDeliveryDate|default:"N/A"  }} </div>
                 </div>
                 <div>
                     <div class="font-medium">Delivery Address</div>
-                    <div>123 Main St.<br>Anytown, CA 12345</div>
+                    <div class="">{{ tracking.shipment.recipient.address|default:"N/A" }} <br>
+                        {{ tracking.shipment.recipient.city|default:"" }}, {{ tracking.shipment.recipient.postCode|default:"" }}</div>
                 </div>
             </div>
         </div>

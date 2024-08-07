@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'newsletter',
     'blog',
     'service_enquiry',
+    'tracking',
 ]
 
 MIDDLEWARE = [
@@ -154,3 +155,7 @@ WAGTAILADMIN_BASE_URL = os.getenv('BASE_URL')
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Aftership settings
+SHIP24_API_KEY = os.getenv('SHIP24_API_KEY')
