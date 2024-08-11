@@ -15,7 +15,7 @@ def tracking(request, tracking_number):
         )
     
     # Check if the response status is not 200 (successful)
-    if response.status_code != 200:
+    if response.status_code != 200 and response.status_code != 201:
         messages.error(request, 'invalid tracking number. please input a valid tracking number')
         return redirect('home')
 
