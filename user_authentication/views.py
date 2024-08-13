@@ -67,7 +67,7 @@ def login_user(request):
                 return redirect('/')
             else:
                 messages.error(request, 'Invalid credentials')
-                return redirect('/login')
+                return redirect('login')
 
         # if form is not valid render the template again with pre populated data
         else:
