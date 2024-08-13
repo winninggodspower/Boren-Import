@@ -35,6 +35,6 @@
         @apply block mx-auto text-white rounded-[7px] bg-primary hover:bg-primary-dark active:ring-4 w-[300px] max-w-full py-3;
     }
     .status-date{
-        @apply text-gray-700 sm:text-black text-[10px] sm:text-xs text-muted-foreground;
+        @apply text-gray-700 sm:text-black text-[10px] sm:text-xs;
     }
 }
