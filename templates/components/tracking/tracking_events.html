@@ -23,7 +23,7 @@
                    <div class="font-medium">{{event.statusMilestone}}</div>
                    <div class="text-sm text-muted-foreground hidden sm:block">{{ event.occurrenceDatetime|format_datetime:"%B %d, %Y - %H:%M %p" }}</div>
                 </div>
-                <p class="text-sm text-muted-foreground mt-1">{{event.status}} in {{event.location}}</p>
+                <p class="text-sm text-muted-foreground mt-1">{{event.status}} {{event.location|default:""|yesno:'in ' }}</p>
                 <div class="text-xs text-gray-500 text-muted-foreground sm:hidden">{{ event.occurrenceDatetime|format_datetime:"%B %d, %Y - %H:%M %p" }}</div>
              </div>
             {% endfor %}

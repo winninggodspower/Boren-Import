@@ -60,7 +60,7 @@
                 <div>
                     <div class="font-medium">Delivery Address</div>
                     <div class="">{{ tracking.shipment.recipient.address|default:"N/A" }} <br>
-                        {{ tracking.shipment.recipient.city|default:"" }}, {{ tracking.shipment.recipient.postCode|default:"" }}</div>
+                        {{ tracking.shipment.recipient.city|default:"" }} {{ tracking.shipment.recipient.postCode|default:""|yesno:',' }} {{ tracking.shipment.destinationCountryCode|default:"" }}</div>
                 </div>
             </div>
         </div>
