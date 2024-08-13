@@ -6,43 +6,43 @@
         <h3 class="whitespace-nowrap text-xl md:text-2xl font-semibold leading-none tracking-tight">Shipping Status</h3>
     </div>
     <div class="p-6">
-        <div class="grid md:grid-cols-5 gap-4">
+        <div class="grid grid-cols-5 gap-4">
 
             {% with status_score_number=tracking.shipment.statusMilestone|status_score|default:0 %}
             <div class="flex flex-col items-center gap-2">
                 <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-200 {% if status_score_number >= 1 %} !bg-primary {% endif %} text-primary-foreground">
                     <div class="w-5 h-5"></div>
                 </div>
-                <div class="text-sm font-medium">Pending </div>
+                <div class="text-xs sm:text-sm font-medium">Pending </div>
                 <div class="text-xs text-muted-foreground"></div>
             </div>
             <div class="flex flex-col items-center gap-2">
                 <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-200 {% if status_score_number >= 2 %} !bg-primary {% endif %} text-primary-foreground">
                     <div class="w-5 h-5"></div>
                 </div>
-                <div class="text-sm font-medium">Shipment Received</div>
-                <div class="text-xs text-muted-foreground">{{tracking.statistics.timestamps.infoReceivedDatetime|format_datetime|default:'NA'}} </div>
+                <div class="text-xs sm:text-sm font-medium">Shipment Received</div>
+                <div class="status-date">{{tracking.statistics.timestamps.infoReceivedDatetime|format_datetime|default:'NA'}} </div>
             </div>
             <div class="flex flex-col items-center gap-2">
                 <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-200  {% if status_score_number >= 3 %}  !bg-primary {% endif %}  text-primary-foreground">
                     <div class="w-5 h-5"></div>
                 </div>
-                <div class="text-sm font-medium">In Transit</div>
-                <div class="text-xs text-muted-foreground">{{tracking.statistics.timestamps.inTransitDatetime|format_datetime|default:'NA'}}</div>
+                <div class="text-xs sm:text-sm font-medium">In Transit</div>
+                <div class="status-date">{{tracking.statistics.timestamps.inTransitDatetime|format_datetime|default:'NA'}}</div>
             </div>
             <div class="flex flex-col items-center gap-2">
                 <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-200  {% if status_score_number >= 4 %}  !bg-primary {% endif %} bg-muted text-muted-foreground">
                     <div class="w-5 h-5"></div>
                 </div>
-                <div class="text-sm font-medium">Out For Delivery</div>
-                <div class="text-xs text-muted-foreground">{{tracking.statistics.timestamps.outForDeliveryDatetime|format_datetime|default:'NA'}}</div>
+                <div class="text-xs sm:text-sm font-medium">Out For Delivery</div>
+                <div class="status-date">{{tracking.statistics.timestamps.outForDeliveryDatetime|format_datetime|default:'NA'}}</div>
             </div>
             <div class="flex flex-col items-center gap-2">
                 <div class="flex items-center justify-center w-10 h-10 rounded-full bg-slate-200  {% if status_score_number >= 5 %}!bg-green-600 {% endif %} text-white">
                     <div class="w-5 h-5"></div>
                 </div>
-                <div class="text-sm font-medium">Delivered</div>
-                <div class="text-xs text-muted-foreground">{{tracking.statistics.timestamps.deliveredDatetime|format_datetime|default:'NA'}}</div>
+                <div class="text-xs sm:text-sm font-medium">Delivered</div>
+                <div class="status-date">{{tracking.statistics.timestamps.deliveredDatetime|format_datetime|default:'NA'}}</div>
             </div>
             {% endwith %}
         </div>
