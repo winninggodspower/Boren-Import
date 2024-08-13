@@ -19,9 +19,6 @@
     .btn-small{
         @apply inline-block text-sm font-bold text-white px-5 py-1 rounded-[68px] mt-2 btn-focus;
     }
-    .form-input{
-        @apply block bg-[#EFF0F2] ps-[30px] h-16 w-full rounded-[7px] outline-blue-600 invalid:outline-2 invalid:outline-red-500 ;
-    }
     .form-legend{
         @apply font-semibold text-4xl md:text-[40px] text-custom-gray-3 mb-10 md:mb-16;
     }
@@ -37,4 +34,9 @@
     .status-date{
         @apply text-gray-700 sm:text-black text-[10px] sm:text-xs;
     }
+}
+
+
+.form-input{
+    @apply block bg-[#EFF0F2] ps-[30px] h-16 w-full rounded-[7px] outline-blue-600 invalid:outline-2 invalid:outline-red-500 ;
 }
