@@ -1,4 +1,5 @@
 from django.db import models
+from user_authentication.models import User
 
 class CustomerFX(models.Model):
     CATEGORY_FX_CHOICES = [
@@ -19,6 +20,9 @@ class CustomerFX(models.Model):
         ('EUR', 'EUR'),
         ('NGN', 'NGN'),
     ]
+
+    # link to user
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     # FX Transaction Details
     category_fx = models.CharField(max_length=50, choices=CATEGORY_FX_CHOICES)

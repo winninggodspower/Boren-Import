@@ -1,4 +1,5 @@
 from django.db import models
+from user_authentication.models import User
 
 class Procurement(models.Model):
     CATEGORY_CHOICES = [
@@ -12,11 +13,15 @@ class Procurement(models.Model):
     CURRENCY_CHOICES = [
         ('USD', 'USD'),
         ('EUR', 'EUR'),
+        ('NGN', 'NGN'),
     ]
     PAYMENT_METHOD_CHOICES = [
         ('credit_card', 'Credit Card'),
         ('paypal', 'PayPal'),
     ]
+
+    # link to user
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     category = models.CharField(max_length=100, choices=CATEGORY_CHOICES)
     customer_type = models.CharField(max_length=100, choices=CUSTOMER_TYPE_CHOICES)
