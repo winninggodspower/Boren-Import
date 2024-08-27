@@ -1,0 +1,11 @@
+{% extends "admins/admin_base.html" %}
+
+{% block body %}
+<main class="pt-20 pb-32">
+    {% if is_procurement %}
+        {% include "admins/components/procurement_details.html" %}
+    {% else %}
+        {% include "admins/components/customer_fx_details.html" %}
+    {% endif %}
+</main>
+{% endblock body %}

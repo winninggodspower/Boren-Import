@@ -55,5 +55,7 @@ class CustomerFX(models.Model):
     receiver_amount = models.DecimalField(max_digits=10, decimal_places=2)
     transfer_reason = models.CharField(max_length=255)
 
+    date_submitted = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return f"{self.transaction_number} - {self.sender_surname} {self.sender_first_name}"

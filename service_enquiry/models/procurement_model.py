@@ -47,5 +47,7 @@ class Procurement(models.Model):
     mailing_phone_number = models.CharField(max_length=15, blank=True, null=True)
     agree = models.BooleanField(default=False)
 
+    date_submitted = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return self.purchase_order_name

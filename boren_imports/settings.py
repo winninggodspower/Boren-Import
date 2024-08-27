@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'blog',
     'service_enquiry',
     'tracking',
+    'boren_admin',
 ]
 
 MIDDLEWARE = [

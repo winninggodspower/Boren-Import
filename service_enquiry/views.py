@@ -20,7 +20,7 @@ def procurement_form(request):
         form = ProcurementForm(request.POST)
         if form.is_valid():
             messages.error(request, 'Successfuly submited procurement form. our team will get back to you')
-            procurement_instance = form.save(oommit=False)
+            procurement_instance = form.save(commit=False)
             procurement_instance.user = request.user
             procurement_instance.save()
             

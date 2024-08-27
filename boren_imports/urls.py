@@ -16,6 +16,7 @@ urlpatterns = [
     path("newsletter/", include('newsletter.urls')),
     path("service_enquiry/", include('service_enquiry.urls')),
     path("tracking/", include('tracking.urls')),
+    path("boren-admin/", include('boren_admin.urls')),
 
     #wagtail urls
     path('cms/', include(wagtailadmin_urls)),
