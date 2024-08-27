@@ -8,16 +8,55 @@
                 <br>IMPORTS</span>
         </a>
 
-        <button data-collapse-toggle="navbar-dropdown" type="button"
-            class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
-            aria-controls="navbar-dropdown" aria-expanded="false">
-            <span class="sr-only">Open main menu</span>
-            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                viewBox="0 0 17 14">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M1 1h15M1 7h15M1 13h15" />
-            </svg>
-        </button>
+        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            {% if user.is_authenticated %}
+            <button id="dropdownDefaultButton" data-dropdown-toggle="profile-dropdown" class="px-5 py-2.5 text-center inline-flex items-center text-[#2234F9]" type="button">
+                <img width="35px" src="{% static "assets/icons/profile-avatar.svg" %}" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 8L13.5 16L20 8H7Z" fill="currentColor"/>
+                </svg>
+            </button>
+            {% else %}
+            <a href="{% url "register" %}" type="button"
+                class="text-primary border border-1 border-primary transition-all hover:bg-primary hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-[5px] px-6 py-2 text-center">Signup
+            </a>
+            {% endif %}
+            
+            <!-- Profile dropdown menu -->
+            <div id="profile-dropdown" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow-lg w-44 mt-2">
+                <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownDefaultButton">
+                <li>
+                    <a href="#" class="flex gap-x-[15px] px-4 py-2 font-medium hover:text-[#2234F9]">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 18C4 16.9391 4.42143 15.9217 5.17157 15.1716C5.92172 14.4214 6.93913 14 8 14H16C17.0609 14 18.0783 14.4214 18.8284 15.1716C19.5786 15.9217 20 16.9391 20 18C20 18.5304 19.7893 19.0391 19.4142 19.4142C19.0391 19.7893 18.5304 20 18 20H6C5.46957 20 4.96086 19.7893 4.58579 19.4142C4.21071 19.0391 4 18.5304 4 18Z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+                            <path d="M12 10C13.6569 10 15 8.65685 15 7C15 5.34315 13.6569 4 12 4C10.3431 4 9 5.34315 9 7C9 8.65685 10.3431 10 12 10Z" stroke="currentColor" stroke-width="2.5"/>
+                        </svg>          
+                        Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url "logout" %}" class="flex gap-x-[15px] px-4 py-2 font-medium hover:text-[#2234F9]">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 12H10.5M18 15L21 12L18 9M13 7V6C13 5.46957 12.7893 4.96086 12.4142 4.58579C12.0391 4.21071 11.5304 4 11 4H6C5.46957 4 4.96086 4.21071 4.58579 4.58579C4.21071 4.96086 4 5.46957 4 6V18C4 18.5304 4.21071 19.0391 4.58579 19.4142C4.96086 19.7893 5.46957 20 6 20H11C11.5304 20 12.0391 19.7893 12.4142 19.4142C12.7893 19.0391 13 18.5304 13 18V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>                            
+                        Sign out
+                    </a>
+                </li>
+                </ul>
+            </div>
+    
+            <div data-collapse-toggle="navbar-dropdown" type="button"
+                class="inline-flex items-center justify-center w-10 h-10 p-2 text-sm rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:order-1"
+                aria-controls="navbar-dropdown" aria-expanded="false">
+                <span class="sr-only">Open main menu</span>
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                    viewBox="0 0 17 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M1 1h15M1 7h15M1 13h15" />
+                </svg>
+            </div>
+        </div>
+
         <div class="hidden w-full md:block md:w-auto" id="navbar-dropdown">
             <ul
                 class="flex flex-col items-center p-4 mt-4 font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
@@ -67,14 +106,6 @@
                 <li>
                     <a href="/pages/blog" class="navlink ">Blog</a>
                 </li>
-                <div class="md:flex gap-6">
-                    <a href=" {% if user.is_authenticated %} {% url "logout" %} {% else %}  {% url "login" %} {% endif %}" type="button"
-                        class="text-white bg-primary hover:bg-primary-dark focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-[5px] px-6 py-2 text-center"> {% if user.is_authenticated %}Logout {% else %} Login {% endif %}</a>
-                    {% if not user.is_authenticated %}
-                    <a href="{% url "register" %}" type="button"
-                        class="text-primary border border-1 border-primary transition-all hover:bg-primary hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-bold rounded-[5px] px-6 py-2 text-center">Signup</a>
-                    {% endif %}
-                </div>
             </ul>
         </div>
     </div>
