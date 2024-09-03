@@ -104,6 +104,8 @@ DATABASES = {
 #settings for the user models
 AUTH_USER_MODEL = 'user_authentication.User'
 
+LOGIN_URL = '/auth/login'
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 

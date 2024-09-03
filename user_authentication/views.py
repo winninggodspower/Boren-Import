@@ -72,7 +72,6 @@ def login_user(request):
         # if form is not valid render the template again with pre populated data
         else:
             print('invalid form')
-            print(form.errors) 
             return render(request, 'login.html', {'form': form})
     else:
         form = LoginForm()

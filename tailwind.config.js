@@ -22,6 +22,7 @@ module.exports = {
         'custom-red': '#FF0707',
         'custom-red-2': '#F50707',
         'custom-dark': '#303031',
+        'muted': 'hsl(210 40% 96.1%)',
       }
     },
     plugins: [

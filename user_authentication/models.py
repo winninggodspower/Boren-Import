@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
+from user_authentication.manager import UserManager
+
 # Create your models here.
 class User(AbstractUser):
     username = None
@@ -12,5 +14,7 @@ class User(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
+    objects = UserManager()
+
     def __str__(self): # __unicode__ on Python 2
-        return self.username
+        return self.fullname

@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from django.contrib import messages
 from django.urls import reverse
 
+from service_enquiry.chat_views import create_chat_room_for_form
 from service_enquiry.forms.customer_fx_form import CustomerFXForm
 from service_enquiry.forms.risk_attestation_form import RiskAttestationForm
-from service_enquiry.models import customer_fx_model
 from .forms.procurement_form import ProcurementForm
 
 # Create your views here.
@@ -23,6 +23,9 @@ def procurement_form(request):
             procurement_instance = form.save(commit=False)
             procurement_instance.user = request.user
             procurement_instance.save()
+
+            # create chat room
+            create_chat_room_for_form(procurement_instance.id, 'procurement')
             
             return redirect('/')  # Replace 'success_url' with your actual success URL
     else:
@@ -42,9 +45,12 @@ def customer_fx_form(request):
 
         if form.is_valid():
             messages.error(request, 'Successfuly submited fx form. our team will get back to you')
-            fx_model = form.save(commit=False)
-            fx_model.user = request.user
-            fx_model.save()
+            fx_instance = form.save(commit=False)
+            fx_instance.user = request.user
+            fx_instance.save()
+
+            # create chat room
+            create_chat_room_for_form(fx_instance.id, 'customerfx')
 
             return redirect('/')  # Replace to home
 
