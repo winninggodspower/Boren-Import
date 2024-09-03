@@ -1,4 +1,5 @@
 {% extends "admins/admin_base.html" %}
+{% load static %}
 
 {% block body %}
 <main class="pt-20 pb-32">
@@ -50,4 +51,14 @@
         </div>
     </div>
 </main>
+
+
+<script>
+    const currentUserEmail = "{{ request.user.email }}";
+    const isUserStaff = "{{ request.user.is_staff }}"
+    const csrfToken = "{{ csrf_token }}";
+    const staticUrl = "{% static '' %}";
+</script>
+<script src="{% static 'js/chat.js' %}" defer></script>
+
 {% endblock body %}
