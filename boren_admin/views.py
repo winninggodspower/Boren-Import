@@ -1,7 +1,11 @@
 from django.shortcuts import redirect, render, get_object_or_404
+from django.contrib.contenttypes.models import ContentType
+
 from django.urls import reverse
 from service_enquiry.models import Procurement, CustomerFX
 from django.contrib import messages
+
+from service_enquiry.models.chat_models import ChatRoom
 
 # Create your views here.
 
@@ -13,10 +17,34 @@ def submitted_forms(request):
     procurements = Procurement.objects.all()
     fxs = CustomerFX.objects.all()
 
-    context = {
-        "procurement_forms": procurements,
-        "fx_forms": fxs,
+    # Get the ContentType for Procurement and CustomerFX models
+    procurement_content_type = ContentType.objects.get_for_model(Procurement)
+    fx_content_type = ContentType.objects.get_for_model(CustomerFX)
+
+    # Create a dictionary of chat rooms mapped by form_id
+    procurement_chat_rooms = {
+        chat_room.form_id: chat_room
+        for chat_room in ChatRoom.objects.filter(
+            form_type=procurement_content_type,
+            form_id__in=procurements.values_list('id', flat=True)
+        )
     }
+
+    fx_chat_rooms = {
+        chat_room.form_id: chat_room
+        for chat_room in ChatRoom.objects.filter(
+            form_type=fx_content_type,
+            form_id__in=fxs.values_list('id', flat=True)
+        )
+    }
+
+    context = {
+        "user_procurements": procurements,
+        "user_fxs": fxs,
+        "procurement_chat_rooms": procurement_chat_rooms,
+        "fx_chat_rooms": fx_chat_rooms,
+    }
+
 
     return render(request, "admins/admin_submitted_forms.html", context)
 
