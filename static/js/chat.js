@@ -10,8 +10,11 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', function() {
             const chatContainerId = this.getAttribute('data-accordion-target');
             const chatContainer = document.querySelector(chatContainerId);
-            if (chatContainer.classList.contains('hidden')) {
+            
+            if (chatContainer.classList.contains('hidden') && !chatContainer.dataset.hasFetched) {
                 const chatId = chatContainerId.split('-').pop();
+                
+                console.log('is fetching');
                 
                 // Fetch messages
                 fetch(`/service_enquiry/fetch_messages/${chatId}/`)
@@ -28,6 +31,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         chatContainer.classList.remove('hidden');
                     });
 
+                console.log('is streaming');
+                
                 // Set up EventSource for real-time updates
                 const eventSource = new EventSource(`/service_enquiry/stream_messages/${chatId}/`);
                 eventSource.onmessage = function(event) {
@@ -36,9 +41,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     addChatBuble(data, chatBox);
                 };
 
-            } else {
-                chatContainer.classList.add('hidden');
-            }
+                chatContainer.dataset.hasFetched = true;
+
+            } 
         });
     });
 
@@ -78,6 +83,7 @@ function addChatBuble(msg, chatBox) {
     messageDiv.classList.add('flex', 'items-start', 'gap-3');
 
     let isUserMessage = msg.sender === currentUserEmail || (msg.sender_is_staff && isUserStaff)
+    
     
     if (isUserMessage) {
         messageDiv.classList.add('justify-end');
