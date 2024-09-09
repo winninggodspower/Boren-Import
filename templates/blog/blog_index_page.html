@@ -69,9 +69,10 @@
 
             </div>
 
-            <form class="mt-10">
+            <form class="mt-10" action="{% url "tracking_form" %}" method="post">
+                {% csrf_token %}
                 <p class="font-medium text-sm pb-4">Track Shipment/Find and ship a product using Tracking ID</p>
-                <input class="px-8 py-4 w-full rounded-3xl border border-black bg-[#3C3C43] bg-opacity-5" placeholder="Input tracking ID" type="text">
+                <input class="px-8 py-4 w-full rounded-3xl border border-black bg-[#3C3C43] bg-opacity-5" placeholder="Input tracking ID" name="tracking_number" type="text">
                 <button type="submit"
                 class="block text-white text-sm font-semibold bg-primary-dark hover:bg-primary focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-md w-9/12 mx-auto py-2 mt-6">TRACK SHIPMENT</button>
             </form>
