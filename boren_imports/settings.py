@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     'modelcluster',
     'taggit',
+    
     "django_browser_reload",
 
     "core",

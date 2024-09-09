@@ -1,11 +1,18 @@
 {% extends "admins/admin_base.html" %}
 {% load static %}
 
+{% block head %}
+    <title>Submitted Forms</title>
+{% endblock head %}
+
 {% block body %}
+<div class="h-56 bg-slate-500 text-white flex justify-center items-center">
+    <h1 class="text-3xl md:text-[45px] leading-[45px] font-extrabold">Boren Admin</h1>
+</div>
 <main class="pt-20 pb-32">
     <div class="w-full max-w-3xl mx-auto">
-        <div class="flex items-center justify-between mb-6">
-            <h1 class="text-2xl font-bold">Submitted Forms</h1>
+        <div class="flex items-center justify-center mb-6">
+            <h1 class="text-2xl font-bold text">Submitted Forms</h1>
         </div>
         <div class="grid gap-4">
             <h2>Procurement Forms</h2>

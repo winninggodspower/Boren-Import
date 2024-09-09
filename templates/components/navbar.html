@@ -10,6 +10,7 @@
 
         <div class="flex items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
             {% if user.is_authenticated %}
+            <p>{{user.fulll_name}}</p>
             <button id="dropdownDefaultButton" data-dropdown-toggle="profile-dropdown" class="px-5 py-2.5 text-center inline-flex items-center text-[#2234F9]" type="button">
                 <img width="35px" src="{% static "assets/icons/profile-avatar.svg" %}" />
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
