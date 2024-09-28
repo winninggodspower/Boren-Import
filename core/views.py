@@ -2,13 +2,22 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib.contenttypes.models import ContentType
 
+from blog.models import BlogIndexPage
+from core.models import Gallery
 from service_enquiry.models.chat_models import ChatRoom
 from service_enquiry.models.customer_fx_model import CustomerFX
 from service_enquiry.models.procurement_model import Procurement
 
 # Create your views here.
 def home(request):
-    return render(request, 'index.html')
+    blogs = BlogIndexPage.objects.first().get_children()
+    gallery = Gallery.objects.all()
+
+    context = {
+        'galleries': gallery,
+        'blogs': blogs,
+    }
+    return render(request, 'index.html', context=context)
 
 def about(request):
     return render(request, 'about.html')

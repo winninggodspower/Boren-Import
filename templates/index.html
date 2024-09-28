@@ -81,7 +81,7 @@
           </h4>
           <hr class="mx-auto w-2/12 border-[2px] border-custom-gray bg-white mt-1 mb-2">
           <p class="font-light text-center text-black">Partnering with over 500 factories and 150 wholesale suppliers in China and We can boast of a high sourcing success rate of 98% and have the capability to find almost any item, product, machine, or material for our customers in the China international.</p>
-          <a href="../templates/services/product_sourcing.html" class="inline-block btn-small bg-custom-gray group-hover:bg-primary">read more</a>
+          <a href="{% url "product_sourcing" %}" class="inline-block btn-small bg-custom-gray group-hover:bg-primary">read more</a>
         </div>
 
         <div class="flex flex-col items-center text-primary">
@@ -95,7 +95,7 @@
             SERVICE</h4>
           <hr class="mx-auto w-2/12 border-[2px] border-custom-gray bg-white mt-1 mb-2">
           <p class="font-light text-center text-black">We ensure accuracy and transparency throughout the procurement process by confirming details such as quantity, size, weight, and other specifications are met by the manufacturer or supplier. </p>
-          <a href="../templates/services/goods_procurement.html" class="inline-block btn-small bg-primary">read more</a>
+          <a href="{% url "goods_procurement" %}" class="inline-block btn-small bg-primary">read more</a>
         </div>
 
         <div class="flex flex-col items-center group hover:text-primary">
@@ -107,7 +107,7 @@
           </h4>
           <hr class="mx-auto w-2/12 border-[2px] border-custom-gray bg-white mt-1 mb-2">
           <p class="font-light text-center text-black">Navigate international transactions seamlessly with our FX payment service. We facilitate secure and timely foreign exchange payments, providing a hassle-free solution for your cross-border financial transactions.</p>
-          <a href="../templates/services/goods_procurement.html" class="inline-block btn-small bg-custom-gray group-hover:bg-primary">read more</a>
+          <a href="{% url "fx_payment" %}" class="inline-block btn-small bg-custom-gray group-hover:bg-primary">read more</a>
         </div>
 
         <div class="flex flex-col items-center group hover:text-primary">
@@ -120,7 +120,7 @@
           </h4>
           <hr class="mx-auto w-2/12 border-[2px] border-custom-gray bg-white mt-1 mb-2">
           <p class="font-light text-center text-black">Optimize your supply chain with our products consolidation and warehousing services. We consolidate goods from various sources, offering cost-effective storage solutions to streamline your inventory management.</p>
-          <a href="../templates/services/product_consultation.html" class="inline-block btn-small bg-custom-gray group-hover:bg-primary">read more</a>
+          <a href="{% url "product_consultation" %}" class="inline-block btn-small bg-custom-gray group-hover:bg-primary">read more</a>
         </div>
 
         <div class="flex flex-col items-center group hover:text-primary">
@@ -133,7 +133,7 @@
           </h4>
           <hr class="mx-auto w-2/12 border-[2px] border-custom-gray bg-white mt-1 mb-2">
           <p class="font-light text-center text-black">Experience swift and reliable air shipping solutions with Boren Imports. Whether it's urgent shipments or time-sensitive deliveries, our air freight services ensure your goods reach their destination efficiently.</p>
-          <a href="../templates/services/air_shipping.html" class="inline-block btn-small bg-custom-gray group-hover:bg-primary">read more</a>
+          <a href="{% url "air_shipping" %}" class="inline-block btn-small bg-custom-gray group-hover:bg-primary">read more</a>
         </div>
 
         <div class="flex flex-col items-center group hover:text-primary">
@@ -149,7 +149,7 @@
           </h4>
           <hr class="mx-auto w-2/12 border-[2px] border-custom-gray bg-white mt-1 mb-2">
           <p class="font-light text-center text-black">Navigate the seas with confidence through our sea shipping services. Boren Imports offers cost-effective and efficient sea freight solutions, providing a reliable way to transport goods between continents.</p>
-          <a href="../templates/services/sea_shipping.html" class="inline-block btn-small bg-custom-gray group-hover:bg-primary">read more</a>
+          <a href="{% url "air_shipping" %}" class="inline-block btn-small bg-custom-gray group-hover:bg-primary">read more</a>
         </div>
       </div>
     </div>
@@ -266,19 +266,15 @@
     <div class="my-12 glide">
       <div class="glide__track" data-glide-el="track">
         <div class="glide__slides">
-          <img class="glide__slide" src="{% static 'assets/carousel/Rectangle 16.jpg' %}" alt="">
-          <img class="glide__slide" src="{% static 'assets/carousel/Rectangle 17.jpg' %}" alt="">
-          <img class="glide__slide" src="{% static 'assets/carousel/Rectangle 18.jpg' %}" alt="">
-          <img class="glide__slide" src="{% static 'assets/carousel/Rectangle 16.jpg' %}" alt="">
-          <img class="glide__slide" src="{% static 'assets/carousel/Rectangle 17.jpg' %}" alt="">
+          {% for gallery in galleries %}
+            <img class="glide__slide h-full" src="{{ gallery.image.url }}" alt="">
+          {% endfor %}
         </div>
       </div>
       <div class="glide__bullets md:!-bottom-8" data-glide-el="controls[nav]">
-        <button class="glide__bullet" data-glide-dir="=0"></button>
-        <button class="glide__bullet" data-glide-dir="=1"></button>
-        <button class="glide__bullet" data-glide-dir="=2"></button>
-        <button class="glide__bullet" data-glide-dir="=2"></button>
-        <button class="glide__bullet" data-glide-dir="=2"></button>
+        {% for index in galleries %}
+          <button class="glide__bullet" data-glide-dir="={{ forloop.counter0 }}"></button>
+        {% endfor %}
       </div>
       <div class="glide__arrows" data-glide-el="controls">
         <button class="border-0 shadow-none glide__arrow glide__arrow--left !left-0" data-glide-dir="<">
@@ -309,35 +305,23 @@
     <div class="my-12 blog-carousel glide">
       <div class="mx-16 glide__track" data-glide-el="track">
         <div class="items-center glide__slides">
+          {% for blog in blogs %}
+          {% with blog.specific as blog %}
           <div class="glide__slide">
-            <img class="rounded-[10px]" src="{% static 'assets/blog/Rectangle 6.jpg' %}" alt="">
+            <img class="rounded-[10px] h-[190px]" src="{{blog.image.file.url}}" alt="">
             <div class="px-2 mt-3  hover:text-[rgba(3,19,192,0.72)]">
-              <p class="text-base font-medium text-wrap">Boren Imports Redefines Global Logistics.</p>
-              <span class="text-xs">September 20, 2024</span>
+              <p class="text-base font-medium text-wrap">{{ blog.title }}</p>
+              <span class="text-xs">{{ blog.date_created }}</span>
             </div>
           </div>
-          <div class="glide__slide">
-            <img class="rounded-[10px]" src="{% static 'assets/blog/Rectangle 7.jpg' %}" alt="">
-            <div class="px-2 mt-3  hover:text-[rgba(3,19,192,0.72)]">
-              <p class="text-base font-medium text-wrap">Boren Imports Redefines Global Logistics.</p>
-              <span class="text-xs">September 20, 2024</span>
-            </div>
-          </div>
-          <div class="glide__slide">
-            <img class="rounded-[10px]" src="{% static 'assets/blog/Rectangle 8.jpg' %}" alt="">
-            <div class="px-2 mt-3  hover:text-[rgba(3,19,192,0.72)]">
-              <p class="text-base font-medium text-wrap">Boren Imports Redefines Global Logistics.</p>
-              <span class="text-xs">September 20, 2024</span>
-            </div>
-          </div>
+          {% endwith %}
+          {% endfor %}
         </div>
       </div>
       <div class="glide__bullets translate-x-0 static flex justify-center md:!-bottom-8" data-glide-el="controls[nav]">
-        <button class="glide__bullet" data-glide-dir="=0"></button>
-        <button class="glide__bullet" data-glide-dir="=1"></button>
-        <button class="glide__bullet" data-glide-dir="=2"></button>
-        <button class="glide__bullet" data-glide-dir="=2"></button>
-        <button class="glide__bullet" data-glide-dir="=2"></button>
+        {% for blog in blogs  %}
+          <button class="glide__bullet" data-glide-dir="={{ forloop.counter0 }}"></button>
+        {% endfor %}
       </div>
       <div class="glide__arrows" data-glide-el="controls">
         <button

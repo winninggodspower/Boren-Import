@@ -1,6 +1,6 @@
 {
   "scripts": { 
-    "compile-css": "tailwindcss -i static/css/input.css -o static/css/output.css --watch --minify"
+    "watch-css": "tailwindcss -i static/css/input.css -o static/css/output.css --watch --minify"
   },
   "dependencies": {
     "flowbite": "^2.5.1",
