@@ -308,11 +308,13 @@
           {% for blog in blogs %}
           {% with blog.specific as blog %}
           <div class="glide__slide">
-            <img class="rounded-[10px] h-[190px]" src="{{blog.image.file.url}}" alt="">
-            <div class="px-2 mt-3  hover:text-[rgba(3,19,192,0.72)]">
-              <p class="text-base font-medium text-wrap">{{ blog.title }}</p>
-              <span class="text-xs">{{ blog.date_created }}</span>
-            </div>
+            <a href="{{ blog.url }}">
+              <img class="rounded-[10px] h-[190px]" src="{{ blog.image.file.url }}" alt="">
+              <div class="px-2 mt-3 hover:text-[rgba(3,19,192,0.72)]">
+                <p class="text-base font-medium text-wrap">{{ blog.title }}</p>
+                <span class="text-xs">{{ blog.date_created }}</span>
+              </div>
+            </a>
           </div>
           {% endwith %}
           {% endfor %}
